@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="ROBOTS" content="NOODP" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header>
+      <%= render 'header' %>
+    </header>
+    <%= render 'flashes' %>
+    <%= yield %>
+  </body>
+</html>
