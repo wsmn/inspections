@@ -1,26 +1,13 @@
 <nav class="nav">
   <div class="nav-left">
     <a class="nav-item">
-      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
-    </a>
-  </div>
-
-  <div class="nav-center">
-    <a class="nav-item">
-      <span class="icon">
-        <i class="fa fa-github"></i>
-      </span>
-    </a>
-    <a class="nav-item">
-      <span class="icon">
-        <i class="fa fa-twitter"></i>
-      </span>
+      <h1>Kontrollansvarig</h1>
     </a>
   </div>
 
   <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
   <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle">
+  <span class="nav-toggle" id=toggle>
     <span></span>
     <span></span>
     <span></span>
@@ -44,7 +31,7 @@
         <p class="control">
           <a class="button" >
             <span class="icon">
-              <i class="fa fa-twitter"></i>
+              <%= fa_icon('twitter') %>
             </span>
             <span>Tweet</span>
           </a>
@@ -52,7 +39,7 @@
         <p class="control">
           <a class="button is-primary">
             <span class="icon">
-              <i class="fa fa-download"></i>
+              <%= fa_icon('download') %>
             </span>
             <span>Download</span>
           </a>
@@ -61,3 +48,4 @@
     </div>
   </div>
 </nav>
+<%= javascript_pack_tag 'menu' %>
