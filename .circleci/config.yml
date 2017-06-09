@@ -25,12 +25,12 @@ jobs:
         key: inspections-yarn-{{ checksum "yarn.lock" }}
 
       - run:
-        name: Bundle install
-        command: bin/bundle install --path vendor/bundle
+          name: Bundle install
+          command: bin/bundle install --path vendor/bundle
 
       - run:
-        name: Yarn install
-        command: yarn install
+          name: Yarn install
+          command: yarn install
 
       - type: cache-save
         name: Store bundle cache
@@ -49,16 +49,16 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       - run:
-        name: Database setup
-        command: bin/rails db:schema:load --trace
+          name: Database setup
+          command: bin/rails db:schema:load --trace
 
       - run:
-        name: Run rspec
-        command: |
-          bundle exec rspec --profile 10 \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress
+          name: Run rspec
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out /tmp/test-results/rspec.xml \
+                              --format progress
 
       - type: store_test_results
         path: /tmp/test-results
