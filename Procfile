@@ -1,1 +1,2 @@
-web: bundle exec pumpa -p $PORT
+web: bundle exec puma -p $PORT
+release: bundle exec rails db:migrate
