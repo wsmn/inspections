@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'mail', '>= 2.7.0.rc1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 gem 'pg'
