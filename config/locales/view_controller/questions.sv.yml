@@ -1,0 +1,10 @@
+sv:
+  questions:
+    index:
+      title: Besiktningsfrågor
+
+    create:
+      success: Frågan skapades
+
+    update:
+      success: Frågan uppdaterades

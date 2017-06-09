@@ -1,0 +1,16 @@
+sv:
+  model:
+    inspection:
+      kinds:
+        other: Övrig
+  activerecord:
+    models:
+      inspection:
+        one: Besiktning
+        other: Besiktningar
+
+    attributes:
+      inspection:
+        customer: Kund
+        customer_id: Kund
+        "on": Datum

@@ -1,0 +1,10 @@
+<h1 class=title><%= t('.title') %></h1>
+
+<div class="columns">
+  <div class="column is-one-quarter">
+    <%= render('panel', active: :new) %>
+  </div>
+  <div class="column">
+    <%= render('form', inspection: @inspection) %>
+  </div>
+</div>

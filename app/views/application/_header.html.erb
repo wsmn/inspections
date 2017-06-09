@@ -1,8 +1,8 @@
 <nav class="nav">
   <div class="nav-left">
-    <a class="nav-item">
-      <h1>Kontrollansvarig</h1>
-    </a>
+    <%= link_to(root_path, class: 'nav-item') do %>
+      <%= image_tag('ka.svg', style: 'min-width: 10rem;') %>
+    <% end %>
   </div>
 
   <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
@@ -17,35 +17,11 @@
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
     <a class="nav-item">
-      Home
+      <%= link_to(Customer.model_name.human(count: 2), customers_path) %>
     </a>
     <a class="nav-item">
-      Documentation
+      <%= link_to(Inspection.model_name.human(count: 2), inspections_path) %>
     </a>
-    <a class="nav-item">
-      Blog
-    </a>
-
-    <div class="nav-item">
-      <div class="field is-grouped">
-        <p class="control">
-          <a class="button" >
-            <span class="icon">
-              <%= fa_icon('twitter') %>
-            </span>
-            <span>Tweet</span>
-          </a>
-        </p>
-        <p class="control">
-          <a class="button is-primary">
-            <span class="icon">
-              <%= fa_icon('download') %>
-            </span>
-            <span>Download</span>
-          </a>
-        </p>
-      </div>
-    </div>
   </div>
 </nav>
 <%= javascript_pack_tag 'menu' %>

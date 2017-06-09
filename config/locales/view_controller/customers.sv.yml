@@ -1,0 +1,10 @@
+sv:
+  customers:
+    index:
+      title: Kunder
+
+    create:
+      success: Kund skapades
+
+    update:
+      success: Kund uppdaterades

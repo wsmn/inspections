@@ -1,0 +1,16 @@
+sv:
+  model:
+    customer:
+      none: "nope"
+
+  activerecord:
+    models:
+      customer:
+        one: Kund
+        other: Kunder
+
+    attributes:
+      customer:
+        name: Namn
+        phone: Telefon
+        address: Adress

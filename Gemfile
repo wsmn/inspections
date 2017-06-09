@@ -22,6 +22,7 @@ gem 'webpacker'
 gem 'bulma-rails', '~> 0.4.2'
 gem 'font-awesome-rails'
 gem 'webpacker-react', '~> 0.3.1'
+gem 'turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
