@@ -14,3 +14,10 @@ sv:
         customer: Kund
         customer_id: Kund
         "on": Datum
+
+    errors:
+      models:
+        inspection:
+          attributes:
+            customer_id:
+              blank: En kund måste väljas.

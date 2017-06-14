@@ -1,7 +1,6 @@
-<%= form_for(inspection) do |f| %>
-  <%= bulma_field(f, :customer, kind: :select, options: options_from_collection_for_select(Customer.all, 'id', 'name', selected: inspection.customer)) %>
-
-  <%= bulma_field(f, :on, kind: :date) %>
+<%= simple_form_for(inspection) do |f| %>
+  <%= f.association(:customer, collection: Customer.all) %>
+  <%= f.input(:on, as: :datepicker) %>
   <%= bulma_button(f) %>
 <% end %>
 
