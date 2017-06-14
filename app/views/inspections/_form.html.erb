@@ -1,5 +1,4 @@
 <%= form_for(inspection) do |f| %>
-  <%= bulma_field(f, :customer, kind: :text) %>
   <%= bulma_field(f, :customer, kind: :select, options: options_from_collection_for_select(Customer.all, 'id', 'name', selected: inspection.customer)) %>
 
   <%= bulma_field(f, :on, kind: :date) %>
