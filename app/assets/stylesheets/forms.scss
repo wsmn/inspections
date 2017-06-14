@@ -1,0 +1,25 @@
+.pika-single {
+  margin-top: 1em;
+  width: 260px; // defined width of Pikaday calendar
+}
+
+input {
+  &[type='checkbox'] {
+    margin-right: .5em;
+    margin-top: 1.1em;
+  }
+
+  &[type='radio'] {
+    margin-right: .5em;
+  }
+}
+
+.collection_radio_buttons { // class decided by simple_form
+  margin-right: 1em;
+}
+
+.control {
+  &.radio-checkbox {
+    margin-top: .3em;
+  }
+}

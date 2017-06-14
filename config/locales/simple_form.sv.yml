@@ -1,0 +1,8 @@
+sv:
+  simple_form:
+    "yes": 'Ja'
+    "no": 'Nej'
+    required:
+      text: 'required'
+      mark: '*'
+      html: '(*)'
