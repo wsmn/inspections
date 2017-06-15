@@ -1,9 +1,14 @@
 class InspectionsController < ApplicationController
   def index
+    @inspections = Inspection.by_date
   end
 
   def new
     @inspection = Inspection.new
+  end
+
+  def edit
+    @inspection = Inspection.find(params[:id])
   end
 
   def create
@@ -11,6 +16,13 @@ class InspectionsController < ApplicationController
     @inspection.save
 
     render(:new, status: 422)
+  end
+
+  def destroy
+    inspection = Inspection.find(params[:id])
+    inspection.destroy!
+
+    redirect_to(inspections_path, notice: t('.success'))  
   end
 
   private

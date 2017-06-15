@@ -6,6 +6,9 @@ sv:
     new:
       title: Ny besiktning
 
+    edit:
+      title: Redigera besiktning
+
     panel:
       new: Ny besiktning
 
@@ -14,3 +17,6 @@ sv:
 
     update:
       success: Besiktningen uppdaterades
+
+    destroy:
+      success: Besiktningen raderades

@@ -8,13 +8,19 @@
     <table class="table is-striped">
       <thead>
         <tr>
-          <td> Hello </td>
+          <td> <%= Inspection.human_attribute_name(:customer) %></td>
+          <td> <%= Inspection.human_attribute_name(:on) %></td>
+          <td> <%= t('global.edit') %> </td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td> Heyo! </td>
-        </tr>
+        <% @inspections.each do |i| %>
+          <tr>
+            <td> <%= link_to(i.customer, i.customer) %> </td>
+            <td> <%= l(i.on) %> </td>
+            <td> <%= link_to(fa_icon('wrench'), edit_inspection_path(i)) %> </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

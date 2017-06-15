@@ -4,4 +4,6 @@ class Inspection < ApplicationRecord
   has_many(:questions, through: :inspection_questions)
 
   validates(:on, presence: true)
+
+  scope(:by_date, -> { order(:on) })
 end

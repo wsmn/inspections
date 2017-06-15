@@ -16,12 +16,10 @@
   <!-- This "nav-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
-    <a class="nav-item">
-      <%= link_to(Customer.model_name.human(count: 2), customers_path) %>
-    </a>
-    <a class="nav-item">
-      <%= link_to(Inspection.model_name.human(count: 2), inspections_path) %>
-    </a>
+    <%= link_to(Customer.model_name.human(count: 2), customers_path,
+                                                     class: 'nav-item') %>
+    <%= link_to(Inspection.model_name.human(count: 2), inspections_path,
+                                                       class: 'nav-item') %>
   </div>
 </nav>
 <%= javascript_pack_tag 'menu' %>

@@ -14,12 +14,26 @@ module BulmaFormHelper
   end
 
   def bulma_button(f, horizontal: f.options[:wrapper] == :horizontal_form)
-    btn = content_tag(:div, class: "field") do
-      content_tag(:div, class: 'control') do
-        f.button(:submit)
-      end
+    buttons = [bulma_submit(f)]
+    buttons << bulma_destroy(f.object)
+
+    cls = buttons.size > 1 ? 'field is-grouped' : 'field'
+    buttons = content_tag(:div, safe_join(buttons), class: cls)
+    horizontal ? bulma_horizontal_button(buttons) : buttons
+  end
+
+  def bulma_submit(form)
+    content_tag(:p, class: 'control') do
+      form.button(:submit)
     end
-    horizontal ? bulma_horizontal_button(btn) : btn
+  end
+
+  def bulma_destroy(obj)
+    return unless obj.persisted?
+    content_tag(:p, class: 'control') do
+      link_to('Delete', polymorphic_path(obj), method: :delete,
+                                               class: 'button is-danger is-pulled-right')
+    end
   end
 
   def bulma_horizontal_button(btn)
