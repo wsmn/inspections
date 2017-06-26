@@ -6,6 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-(1..10).each do |i|
-  Customer.create(name: "David #{i}", phone: "070560788#{i}", address: "Home#{i}")
-end
+10.times { FactoryGirl.create(:customer) }
