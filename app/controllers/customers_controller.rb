@@ -13,7 +13,10 @@ class CustomersController < ApplicationController
       render(json: @customer.errors, status: :unprocessable_entity)
     end
   end
-  #
+
+  def edit
+  end
+
   # def destroy
   #   respond_with(Customer.destroy(params[:id]))
   # end

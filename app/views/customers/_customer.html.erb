@@ -1,0 +1,22 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= Customer.model_name.human %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4"><%= customer.name %></p>
+        <p class="subtitle is-6">
+          <%= fa_icon('hashtag', text: customer.id) %>
+          <%= fa_icon('phone', text: customer.phone) %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to(fa_icon('wrench', text: t('global.edit')),
+                edit_customer_path(customer), class: 'card-footer-item') %>
+  </footer>
+</div>
