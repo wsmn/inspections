@@ -1,0 +1,22 @@
+sv:
+  projects:
+    create:
+      success: Projektet skapades
+
+    index:
+      title: Projekt
+
+    show:
+      title: "Projekt | %{project}"
+
+    new:
+      title: Nytt projekt
+
+    project_panel:
+      all_inspections: Alla besiktningar
+      new_inspection: Ny besiktning
+      show_project: Visa projektet
+
+    panel:
+      all_projects: Alla projekt
+      new: Nytt projekt

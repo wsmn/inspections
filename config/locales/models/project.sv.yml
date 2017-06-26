@@ -1,0 +1,12 @@
+sv:
+  activerecord:
+    models:
+      project: Projekt
+
+    attributes:
+      project:
+        customer_id: Kund
+        customer: Kund
+        description: Beskrivning
+        status: Status
+        title: Titel

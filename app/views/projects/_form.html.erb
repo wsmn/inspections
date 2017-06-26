@@ -1,0 +1,9 @@
+<%= simple_form_for(project) do |f| %>
+  <%= f.association(:customer, collection: Customer.all) %>
+  <%= f.input(:title) %>
+  <%= f.input(:description, input_html: { rows: '5' }) %>
+  <%= bulma_button(f) %>
+<% end %>
+
+<%= javascript_pack_tag('forms') %>
+<%= stylesheet_pack_tag('forms') %>

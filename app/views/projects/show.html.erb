@@ -1,0 +1,10 @@
+<h1 class=title><%= t('.title', project: @project) %></h1>
+
+<div class="columns">
+  <div class="column is-one-quarter">
+    <%= render('panel', active: :show_project, project: @project) %>
+  </div>
+  <div class="column is-one-quarter">
+    <%= render(@project.customer) %>
+  </div>
+</div>

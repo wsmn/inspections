@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609082908) do
+ActiveRecord::Schema.define(version: 20170626140914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -23,25 +24,25 @@ ActiveRecord::Schema.define(version: 20170609082908) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "inspection_questions", force: :cascade do |t|
-    t.bigint "inspection_id", null: false
-    t.bigint "question_id", null: false
-    t.integer "position", default: 0, null: false
-    t.text "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["inspection_id"], name: "index_inspection_questions_on_inspection_id"
-    t.index ["question_id"], name: "index_inspection_questions_on_question_id"
-  end
-
   create_table "inspections", force: :cascade do |t|
-    t.bigint "customer_id", null: false
+    t.bigint "project_id", null: false
     t.date "on", null: false
     t.integer "kind", default: 0, null: false
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_inspections_on_customer_id"
+    t.index ["project_id"], name: "index_inspections_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.string "title"
+    t.text "description"
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_projects_on_customer_id"
+    t.index ["status"], name: "index_projects_on_status"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -52,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170609082908) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "inspection_questions", "inspections"
-  add_foreign_key "inspection_questions", "questions"
-  add_foreign_key "inspections", "customers"
+  add_foreign_key "inspections", "projects"
+  add_foreign_key "projects", "customers"
 end

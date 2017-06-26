@@ -1,0 +1,22 @@
+<% active ||= :none %>
+<% project ||= nil %>
+<% if project.present? %>
+  <%= render('/projects/project_panel', project: project, active: active) %>
+  <hr />
+<% end %>
+
+<nav class="panel">
+  <%= active_panel(projects_path, active, :index) do %>
+    <span class="panel-icon">
+      <%= fa_icon('list') %>
+    </span>
+    <%= t('.all_projects') %>
+  <% end %>
+
+  <%= active_panel(new_project_path, active, :new) do %>
+    <span class="panel-icon">
+      <%= fa_icon('plus-square') %>
+    </span>
+    <%= t('.new') %>
+  <% end %>
+</nav>
