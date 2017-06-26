@@ -1,3 +1,9 @@
 @import 'font-awesome';
 @import 'bulma';
 @import 'forms';
+
+.fa {
+  font-size: inherit;
+  margin-right: .1rem;
+  vertical-align: middle;
+}

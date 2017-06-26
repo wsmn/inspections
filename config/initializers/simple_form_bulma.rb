@@ -179,6 +179,16 @@ SimpleForm.setup do |config|
     b.use :hint,  wrap_with: { tag: 'p', class: 'help is-info' }
   end
 
+  config.wrappers :textarea, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :readonly
+    b.use :label, class: 'label'
+    b.use :input, wrap_with: { tag: 'p', class: 'control' }, class: 'textarea'
+    b.use :error, wrap_with: { tag: 'p', class: 'help is-danger' }
+    b.use :hint,  wrap_with: { tag: 'p', class: 'help is-info' }
+  end
+
   config.default_wrapper = :vertical_form
   config.wrapper_mappings = {
     check_boxes: :vertical_radio_and_checkboxes,
@@ -187,6 +197,7 @@ SimpleForm.setup do |config|
     boolean: :vertical_boolean,
     datepicker: :vertical_datepicker,
     collection: :vertical_select,
-    select: :vertical_select
+    select: :vertical_select,
+    text: :textarea
   }
 end
