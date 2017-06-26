@@ -14,14 +14,16 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'textacular', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
 gem 'webpacker-react', '~> 0.3.1'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end

@@ -1,33 +1,37 @@
 class InspectionsController < ApplicationController
   def index
-    @inspections = Inspection.by_date
+    @project = Project.find(params[:project_id])
+    @inspections = @project.inspections.by_date
   end
 
   def new
-    @inspection = Inspection.new
+    @project = Project.find(params[:project_id])
+    @inspection = @project.inspections.build
   end
 
   def edit
-    @inspection = Inspection.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @inspection = @project.inspections.find(params[:id])
   end
 
   def create
-    @inspection = Inspection.new(inspection_params)
-    @inspection.save
+    @project = Project.find(params[:project_id])
+    @inspection = @project.inspections.build(inspection_params)
+    @inspection.save!
 
     render(:new, status: 422)
   end
 
   def destroy
-    inspection = Inspection.find(params[:id])
-    inspection.destroy!
+    project = Project.find(params[:project_id])
+    project.inspections.find(params[:id]).destroy!
 
-    redirect_to(inspections_path, notice: t('.success'))  
+    redirect_to(project_inspections_path(project), notice: t('.success'))
   end
 
   private
 
   def inspection_params
-    params.require(:inspection).permit(:customer_id, :on)
+    params.require(:inspection).permit(:on)
   end
 end
