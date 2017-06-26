@@ -1,7 +1,6 @@
-<%= simple_form_for(inspection) do |f| %>
-  <%= f.association(:customer, collection: Customer.all) %>
+<%= simple_form_for([project, inspection]) do |f| %>
   <%= f.input(:on, as: :datepicker) %>
-  <%= bulma_button(f) %>
+  <%= bulma_button(f, parent: project) %>
 <% end %>
 
 <%= javascript_pack_tag('forms') %>

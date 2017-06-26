@@ -2,9 +2,9 @@
 
 <div class="columns">
   <div class="column is-one-quarter">
-    <%= render('panel', active: :new) %>
+    <%= render('projects/panel', active: :new_project, project: @project) %>
   </div>
   <div class="column">
-    <%= render('form', inspection: @inspection) %>
+    <%= render('form', inspection: @inspection, project: @project) %>
   </div>
 </div>

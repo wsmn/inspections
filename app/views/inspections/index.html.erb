@@ -2,13 +2,12 @@
 
 <div class="columns">
   <div class="column is-one-quarter">
-    <%= render('panel', active: :index) %>
+    <%= render('projects/panel', active: :index_inspections, project: @project) %>
   </div>
   <div class="column">
     <table class="table is-striped">
       <thead>
         <tr>
-          <td> <%= Inspection.human_attribute_name(:customer) %></td>
           <td> <%= Inspection.human_attribute_name(:on) %></td>
           <td> <%= t('global.edit') %> </td>
         </tr>
@@ -16,9 +15,11 @@
       <tbody>
         <% @inspections.each do |i| %>
           <tr>
-            <td> <%= link_to(i.customer, i.customer) %> </td>
             <td> <%= l(i.on) %> </td>
-            <td> <%= link_to(fa_icon('wrench'), edit_inspection_path(i)) %> </td>
+            <td>
+              <%= link_to(fa_icon('wrench'),
+                          edit_project_inspection_path(@project, i)) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
