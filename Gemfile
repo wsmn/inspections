@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.1'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1.2'
 
 gem 'bulma-rails', '~> 0.4.2'
 gem 'font-awesome-rails'
@@ -21,6 +21,7 @@ gem 'webpacker-react', '~> 0.3.1'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'factory_girl_rails'
