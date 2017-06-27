@@ -20,3 +20,6 @@ sv:
 
     destroy:
       success: Besiktningen raderades
+
+    upcoming:
+      title: Kommande besiktningar

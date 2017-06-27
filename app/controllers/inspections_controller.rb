@@ -32,6 +32,6 @@ class InspectionsController < ApplicationController
   private
 
   def inspection_params
-    params.require(:inspection).permit(:on)
+    params.require(:inspection).permit(:at_date)
   end
 end

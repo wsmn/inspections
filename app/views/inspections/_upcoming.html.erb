@@ -1,0 +1,23 @@
+<% project ||= nil %>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= t('.title') %>
+    </p>
+    <%= link_to(fa_icon('list'), project_inspections_path(project),
+                                 class: 'card-header-icon') %>
+  </header>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <ul>
+          <% inspections.each do |i| %>
+            <li>
+              <%= link_to(i.to_s, edit_project_inspection_path(project, i)) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
