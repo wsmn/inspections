@@ -16,7 +16,20 @@ sv:
       all_inspections: Alla besiktningar
       new_inspection: Ny besiktning
       show_project: Visa projektet
+      edit_project: Redigera projekt
 
     panel:
       all_projects: Alla projekt
       new: Nytt projekt
+
+    edit:
+      title: Redigera projekt
+
+    update:
+      success: Projektet uppdaterades
+
+    filter:
+      unfiltered: Ofiltrerat
+
+    images:
+      title: Bilder

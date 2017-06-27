@@ -3,7 +3,9 @@
 # Controller for handling projects
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @status = params[:status]
+    @projects = Project.includes(:customer)
+    @projects = @projects.where(status: @status) if @status.present?
   end
 
   def new
@@ -11,6 +13,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project = Project.includes(:customer).find(params[:id])
+    @inspections = @project.inspections.upcoming
+  end
+
+  def edit
     @project = Project.find(params[:id])
   end
 
@@ -23,10 +30,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      redirect_to(edit_project_path(@project), notice: t('.success'))
+    else
+      render(:edit, status: 422)
+    end
+  end
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :customer_id, :description)
+    params.require(:project).permit(:title, :customer_id, :description, :status)
   end
 end

@@ -1,10 +1,31 @@
-<h1 class=title><%= t('.title', project: @project) %></h1>
+<%= project_title(@project.status) %>
+<h2 class="subtitle is-3"><%= @project %></h2>
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <%= render('panel', active: :show_project, project: @project) %>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-4 is-parent">
+    <div class="tile is-child">
+      <%= render('panel', active: :show_project, project: @project) %>
+    </div>
   </div>
-  <div class="column is-one-quarter">
-    <%= render(@project.customer) %>
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <div class="tile is-child">
+          <%= render(@project.customer) %>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child">
+          <%= render('inspections/upcoming', inspections: @inspections,
+                                             project: @project) %>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <%= render('images') %>
+      </div>
+    </div>
   </div>
 </div>

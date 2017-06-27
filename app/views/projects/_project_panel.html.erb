@@ -6,6 +6,13 @@
     <%= t('.show_project') %>
   <% end %>
 
+  <%= active_panel(edit_project_path(project), active, :edit) do %>
+    <span class="panel-icon">
+      <%= fa_icon('wrench') %>
+    </span>
+    <%= t('.edit_project') %>
+  <% end %>
+
   <%= active_panel(project_inspections_path(project), active, :index_inspections) do %>
     <span class="panel-icon">
       <%= fa_icon('files-o') %>

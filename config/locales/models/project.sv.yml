@@ -1,4 +1,12 @@
 sv:
+  models:
+    project:
+      status:
+        active: Aktivt
+        paused: Pausat
+        completed: Färdigt
+        cancelled: Avbrutet
+
   activerecord:
     models:
       project: Projekt
