@@ -1,0 +1,38 @@
+<nav class="panel">
+  <%= active_panel(projects_path(status: :active), active, 'active') do %>
+    <span class="panel-icon">
+      <%= fa_icon('play') %>
+    </span>
+    <%= t('models.project.status.active') %>
+  <% end %>
+
+  <%= active_panel(projects_path(status: :paused), active, 'paused') do %>
+    <span class="panel-icon">
+      <%= fa_icon('pause') %>
+    </span>
+    <%= t('models.project.status.paused') %>
+  <% end %>
+
+  <%= active_panel(projects_path(status: :completed), active, 'completed') do %>
+    <span class="panel-icon">
+      <%= fa_icon('check') %>
+    </span>
+    <%= t('models.project.status.completed') %>
+  <% end %>
+
+  <%= active_panel(projects_path(status: :cancelled), active, 'cancelled') do %>
+    <span class="panel-icon">
+      <%= fa_icon('stop') %>
+    </span>
+    <%= t('models.project.status.cancelled') %>
+  <% end %>
+
+  <% if active.present? %>
+    <%= active_panel(projects_path, active, 'skip') do %>
+      <span class="panel-icon">
+        <%= fa_icon('ban') %>
+      </span>
+      <%= t('.unfiltered') %>
+    <% end %>
+  <% end %>
+</nav>

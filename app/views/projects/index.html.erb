@@ -1,15 +1,18 @@
-<h1 class=title><%= t('.title') %></h1>
+<%= project_title %>
+<h2 class="subtitle is-3"><%= t('.title') %></h2>
 
 <div class="columns">
   <div class="column is-one-quarter">
     <%= render('panel', active: :index, project: @project) %>
+    <%= render('filter', active: @status) %>
   </div>
   <div class="column">
     <table class="table is-striped">
       <thead>
         <tr>
-          <td> <%= Customer.model_name.human %></td>
           <td> <%= Project.human_attribute_name(:title) %></td>
+          <td> <%= Project.human_attribute_name(:status) %></td>
+          <td> <%= Customer.model_name.human %></td>
           <td> <%= t('global.edit') %> </td>
         </tr>
       </thead>
@@ -17,6 +20,7 @@
         <% @projects.each do |p| %>
           <tr>
             <td> <%= link_to(p.title, p) %> </td>
+            <td> <%= project_tag(p.status, pos: '', size: 'small') %> </td>
             <td> <%= link_to(p.customer, p.customer) %> </td>
             <td> <%= link_to(fa_icon('wrench'), edit_project_path(p)) %> </td>
           </tr>

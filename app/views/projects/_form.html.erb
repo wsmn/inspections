@@ -1,5 +1,7 @@
 <%= simple_form_for(project) do |f| %>
   <%= f.association(:customer, collection: Customer.all) %>
+  <%= f.input(:status, collection: project_statuses,
+                       selected: project.status) %>
   <%= f.input(:title) %>
   <%= f.input(:description, input_html: { rows: '5' }) %>
   <%= bulma_button(f) %>
