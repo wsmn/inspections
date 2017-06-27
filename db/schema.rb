@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170626140914) do
 
   create_table "inspections", force: :cascade do |t|
     t.bigint "project_id", null: false
-    t.date "on", null: false
+    t.date "at_date", null: false
     t.integer "kind", default: 0, null: false
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
@@ -43,14 +43,6 @@ ActiveRecord::Schema.define(version: 20170626140914) do
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_projects_on_customer_id"
     t.index ["status"], name: "index_projects_on_status"
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.integer "kind", default: 0, null: false
-    t.integer "category", default: 0, null: false
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "inspections", "projects"
