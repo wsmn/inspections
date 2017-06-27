@@ -8,3 +8,6 @@ sv:
 
     update:
       success: Kund uppdaterades
+
+    customer:
+      project_id: "Kundnr: %{id}"

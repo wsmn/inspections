@@ -1,4 +1,6 @@
-<h1 class=title><%= t('.title') %></h1>
+<h1 class="title is-1"><%= Project.model_name.human %></h1>
+<h2 class="subtitle is-3"><%= @project %></h2>
+<h2 class="subtitle is-4"><%= t('.title') %></h2>
 
 <div class="columns">
   <div class="column is-one-quarter">
@@ -15,7 +17,7 @@
       <tbody>
         <% @inspections.each do |i| %>
           <tr>
-            <td> <%= l(i.on) %> </td>
+            <td> <%= l(i.at_date) %> </td>
             <td>
               <%= link_to(fa_icon('wrench'),
                           edit_project_inspection_path(@project, i)) %>
