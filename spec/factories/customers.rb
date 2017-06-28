@@ -3,5 +3,6 @@ FactoryGirl.define do
     name
     phone
     address
+    email
   end
 end

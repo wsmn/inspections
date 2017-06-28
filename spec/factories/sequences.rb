@@ -6,7 +6,7 @@ FactoryGirl.define do
   sequence(:phone) { |n| "#{%w[07011111 07022222].sample}#{n}" }
   sequence(:description) { |n| "A long description #{n}" }
   sequence(:address) { |n| "#{road} #{n}, #{zipcode}" }
-
+  sequence(:email) { |n| "person#{n}@example.com" }
   def road
     %w[Briggvägen Brisvägen Brovägen].sample
   end
