@@ -9,6 +9,7 @@ class CustomerForm extends React.Component {
       name: '',
       phone: '',
       address: '',
+      email: '',
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -43,7 +44,7 @@ class CustomerForm extends React.Component {
   }
 
   valid(e) {
-    // return this.state.name && this.state.phone && this.state.address;
+    // return this.state.name && this.state.phone && this.state.address && this.state.email;
     return this.state.name;
   }
 
@@ -80,6 +81,17 @@ class CustomerForm extends React.Component {
                    placeholder="Adress"
                    name="address"
                    value={this.state.address}
+                   onChange={this.handleInputChange}/>
+          </p>
+        </div>
+        <div className="field">
+          <label className="label">Email</label>
+          <p className="control">
+            <input className="input"
+                   type="text"
+                   placeholder="Email"
+                   name="email"
+                   value={this.state.email}
                    onChange={this.handleInputChange}/>
           </p>
         </div>
