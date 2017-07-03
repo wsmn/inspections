@@ -1,0 +1,28 @@
+<% inspection ||= entry.inspection %>
+
+<div class="card">
+  <header class="card-header">
+    <%= simple_format(t('.new_entry'), class: 'card-header-title') %>
+  </header>
+  <div class="card-content">
+    <%= simple_form_for([inspection, entry], remote: true) do |f| %>
+    <div class="field is-grouped">
+      <p class="control">
+        <span class="select">
+          <%= f.input_field(:kind, collection: question_kinds,
+                                   include_blank: false) %>
+        </span>
+      </p>
+      <p class="control is-expanded">
+        <%= f.input_field(:question_string, class: 'input',
+                          placeholder: Entry.human_attribute_name(:question_string)) %>
+      </p>
+    </div>
+      <hr />
+      <%= f.association(:question, collection: Question.all,
+                                   label: t('.existing_question'),
+                                   required: false) %>
+      <%= f.button(:submit) %>
+    <% end %>
+  </div>
+</div>
