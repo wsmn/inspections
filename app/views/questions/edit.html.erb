@@ -1,0 +1,11 @@
+<h1 class="title is-1"><%= Question.model_name.human %></h1>
+<h2 class="subtitle is-3"><%= t('.title') %></h2>
+
+<div class="columns">
+  <div class="column is-one-quarter">
+    <%= render('questions/panel', active: :edit) %>
+  </div>
+  <div class="column">
+    <%= render('form', question: @question) %>
+  </div>
+</div>

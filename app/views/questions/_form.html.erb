@@ -1,0 +1,6 @@
+<%= simple_form_for(question) do |f| %>
+  <%= f.input(:question) %>
+  <%= f.input(:kind, collection: question_kinds) %>
+  <%= f.input(:description) %>
+  <%= bulma_button(f) %>
+<% end %>
