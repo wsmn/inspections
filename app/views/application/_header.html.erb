@@ -18,8 +18,8 @@
   <div class="nav-right nav-menu">
     <%= link_to(Customer.model_name.human(count: 2), customers_path,
                                                      class: 'nav-item') %>
-    <%= link_to(Inspection.model_name.human(count: 2), inspections_path,
-                                                       class: 'nav-item') %>
+    <%= link_to(Project.model_name.human(count: 2), projects_path,
+                                                    class: 'nav-item') %>
   </div>
 </nav>
 <%= javascript_pack_tag 'menu' %>

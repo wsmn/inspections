@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# View helper for projects
 module ProjectHelper
   def project_statuses
     Project.statuses.keys.map { |k| [project_status(k), k] }
