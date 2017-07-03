@@ -13,7 +13,7 @@
         <ul>
           <% inspections.each do |i| %>
             <li>
-              <%= link_to(i.to_s, edit_project_inspection_path(project, i)) %>
+              <%= link_to(i.to_s, project_inspection_path(project, i)) %>
             </li>
           <% end %>
         </ul>

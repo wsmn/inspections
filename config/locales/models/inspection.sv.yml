@@ -13,7 +13,7 @@ sv:
       inspection:
         customer: Kund
         customer_id: Kund
-        "on": Datum
+        at_date: Datum
 
     errors:
       models:

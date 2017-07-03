@@ -17,7 +17,9 @@
       <tbody>
         <% @inspections.each do |i| %>
           <tr>
-            <td> <%= l(i.at_date) %> </td>
+            <td>
+              <%= link_to(l(i.at_date), project_inspection_path(@project, i)) %>
+            </td>
             <td>
               <%= link_to(fa_icon('wrench'),
                           edit_project_inspection_path(@project, i)) %>

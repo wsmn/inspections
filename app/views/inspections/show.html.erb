@@ -1,0 +1,21 @@
+<h1 class="title is-1"><%= Project.model_name.human %></h1>
+<h2 class="subtitle is-3"><%= @project %></h2>
+<h2 class="subtitle is-4"><%= t('.title') %></h2>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-parent is-3">
+    <div class="tile is-child">
+      <%= render('projects/panel', active: :show_inspection, project: @project) %>
+    </div>
+  </div>
+
+  <div class="tile is-parent is-vertical">
+    <div class="tile is-child entries">
+      <%= render(@entries) %>
+    </div>
+    <div class="tile is-child" id="new-entry">
+      <%= render('entries/new_entry', entry: @entry,
+                                      inspection: @inspection) %>
+    </div>
+  </div>
+</div>
