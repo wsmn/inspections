@@ -1,0 +1,15 @@
+<div class="tile is-child" id="entry-<%= entry.id %>">
+  <div class="card">
+    <header class="card-header">
+      <%= simple_format(entry.to_s, class: 'card-header-title') %>
+      <%= link_to(fa_icon('trash', class: 'help is-danger'),
+                  inspection_entry_path(entry.inspection, entry),
+                  method: :delete, remote: true,
+                  class: 'card-header-icon icon is-medium') %>
+
+    </header>
+    <div class="card-content" id="entry-answer-<%= entry.id %>">
+      <%= render(entry.answer_form, entry: entry) %>
+    </div>
+  </div>
+</div>

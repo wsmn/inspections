@@ -1,0 +1,12 @@
+var entriesTag = document.getElementsByClassName('entries')[0];
+var newEntryTag = document.getElementById("new-entry");
+
+<% if @entry.persisted? %>
+  var template = document.createElement('template');
+  template.innerHTML = "<%= j render(@entry) %>";
+  entriesTag.appendChild(template.content);
+
+  newEntryTag.innerHTML = "<%= j render('new_entry', entry: @new_entry) %>"
+<% else %>
+  newEntryTag.innerHTML = "<%= j render('new_entry', entry: @entry) %>"
+<% end %>
