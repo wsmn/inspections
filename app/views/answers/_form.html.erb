@@ -1,0 +1,6 @@
+<%= simple_form_for([entry.inspection,
+                     entry,
+                     entry.build_answer], remote: true) do |f| %>
+  <%= f.input(:answer, label: false) %>
+  <%= f.button(:submit, t('global.save')) %>
+<% end %>

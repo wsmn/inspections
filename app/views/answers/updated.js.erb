@@ -1,0 +1,2 @@
+var answerTag = document.getElementById("<%= "entry-answer-#{@entry.id}"%>");
+answerTag.innerHTML = "<%= j render(@entry.answer_form, entry: @entry) %> UPPDATERADES!"
