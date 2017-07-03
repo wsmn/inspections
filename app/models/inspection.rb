@@ -1,6 +1,8 @@
 class Inspection < ApplicationRecord
   belongs_to(:project)
   has_one(:customer, through: :project)
+  has_many(:entries)
+  has_many(:questions, through: :entries)
 
   validates(:at_date, presence: true)
 

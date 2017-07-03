@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Handles inspections and their questions
 class InspectionsController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
@@ -14,12 +17,24 @@ class InspectionsController < ApplicationController
     @inspection = @project.inspections.find(params[:id])
   end
 
+  def show
+    @project = Project.find(params[:project_id])
+    @inspection = @project.inspections.find(params[:id])
+    @entries = @inspection.entries
+                          .includes(:question, :answer)
+                          .order(:id)
+    @entry = @inspection.entries.build
+  end
+
   def create
     @project = Project.find(params[:project_id])
     @inspection = @project.inspections.build(inspection_params)
-    @inspection.save!
-
-    render(:new, status: 422)
+    if @inspection.save
+      redirect_to(project_inspection_path(@project, @inspection),
+                  notice: t('.success'))
+    else
+      render(:new, status: 422)
+    end
   end
 
   def destroy
