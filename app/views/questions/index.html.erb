@@ -1,0 +1,28 @@
+<h1 class="title is-1"><%= Question.model_name.human %></h1>
+<h2 class="subtitle is-3"><%= t('.title') %></h2>
+
+<div class="columns">
+  <div class="column is-one-quarter">
+    <%= render('panel', active: :index) %>
+  </div>
+  <div class="column">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <td> <%= Question.human_attribute_name(:question) %></td>
+          <td> <%= Question.human_attribute_name(:kind) %></td>
+          <td> <%= t('global.edit') %> </td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @questions.each do |q| %>
+          <tr>
+            <td> <%= link_to(q.question, edit_question_path(q)) %> </td>
+            <td> <%= question_kind(q.kind) %> </td>
+            <td> <%= link_to(fa_icon('wrench'), edit_question_path(q)) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

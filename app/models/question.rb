@@ -1,8 +1,15 @@
-class Question < ApplicationRecord
-  has_many(:inspection_questions)
-  has_many(:inspections, through: :inspection_questions)
-  enum(kind: { text: 0 })
-  enum(category: { general: 0 })
+# frozen_string_literal: true
 
-  validates(:content, presence: true)
+# Questions used for inspections
+class Question < ApplicationRecord
+  has_many(:entries)
+  has_many(:inspections, through: :entries)
+  enum(kind: { text: 0, bool: 1 })
+
+  validates(:question, :kind, presence: true)
+  validates(:question, uniqueness: { scope: :kind })
+
+  def to_s
+    "#{id}/#{kind}: #{question}"
+  end
 end
