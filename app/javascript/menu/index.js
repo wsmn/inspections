@@ -1,5 +1,5 @@
-import menu_toggle from './menu';
+import menuToggle from './menu';
 
 document.addEventListener('DOMContentLoaded', () => {
-  menu_toggle.initialize();
+  menuToggle.initialize();
 });

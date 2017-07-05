@@ -1,1 +1,1 @@
-import '../notifications'
+import '../notifications';
