@@ -16,10 +16,14 @@
   <!-- This "nav-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
-    <%= link_to(Customer.model_name.human(count: 2), customers_path,
-                                                     class: 'nav-item') %>
-    <%= link_to(Project.model_name.human(count: 2), projects_path,
-                                                    class: 'nav-item') %>
+    <%= link_to(Customer.model_name.human(count: 2),
+                customers_path,
+                class: 'nav-item is-tab',
+                data: { turbolinks: false }) %>
+    <%= link_to(Project.model_name.human(count: 2),
+                projects_path,
+                class: 'nav-item is-tab',
+                data: { turbolinks: false }) %>
   </div>
 </nav>
 <%= javascript_pack_tag 'menu' %>
