@@ -3,5 +3,8 @@ module.exports = {
       "browser": true,
       "es6": true,
     },
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "rules": {
+      "no-param-reassign": ["error", { "props": false }],
+    }
 };

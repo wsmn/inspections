@@ -3,15 +3,15 @@
 
 const notificationNodes = document.getElementsByClassName('notification');
 
-const notification_hide = {
+const notificationHide = {
   initialize() {
-    for (let node of notificationNodes) {
+    Array.from(notificationNodes).forEach((node) => {
       const button = node.getElementsByClassName('delete')[0];
-      button.addEventListener('click', (event) => {
+      button.addEventListener('click', () => {
         node.style.display = 'none';
       });
-    }
-  }
+    });
+  },
 };
 
-export default notification_hide;
+export default notificationHide;
