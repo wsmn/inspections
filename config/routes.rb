@@ -15,7 +15,11 @@ Rails.application.routes.draw do
       resources(:text_answers, only: %i[create update])
     end
   end
+
   resources(:questions, only: %i[create new index edit update destroy])
+  resource(:search, only: []) do
+    post(:project, on: :collection)
+  end
 
   root(controller: :projects, action: :index)
 end
