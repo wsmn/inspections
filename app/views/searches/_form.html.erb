@@ -1,0 +1,23 @@
+<% target ||= :customer %>
+<%= simple_form_for(:search, url: url_for(controller: :searches, action: target),
+                             method: :post,
+                             remote: true) do |f| %>
+  <div class="field has-addons">
+    <p class="control has-icons-left">
+      <%= f.input_field(:text, class: 'input',
+                               placeholder: 'Titel, namn, adress...',
+                               id: 'search-field') %>
+      <span class="icon is-small is-left">
+        <i class="fa fa-search"></i>
+      </span>
+    </p>
+    <p class="control">
+      <%= f.button(:submit, t('global.search'), class: 'button is-info') %>
+    </p>
+  </div>
+<% end %>
+<br />
+
+<div class="search-results">
+
+</div>
