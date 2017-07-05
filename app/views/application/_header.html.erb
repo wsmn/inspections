@@ -1,29 +1,32 @@
-<nav class="nav">
-  <div class="nav-left">
-    <%= link_to(root_path, class: 'nav-item') do %>
-      <%= image_tag('ka.svg', style: 'min-width: 10rem;') %>
-    <% end %>
-  </div>
-
-  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle" id=toggle>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-
-  <!-- This "nav-menu" is hidden on mobile -->
-  <!-- Add the modifier "is-active" to display it on mobile -->
-  <div class="nav-right nav-menu">
-    <%= link_to(Customer.model_name.human(count: 2),
-                customers_path,
-                class: 'nav-item is-tab',
-                data: { turbolinks: false }) %>
-    <%= link_to(Project.model_name.human(count: 2),
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <%= link_to(root_path, class: 'nav-item') do %>
+        <%= image_tag('ka.svg', style: 'max-width: 8rem;') %>
+      <% end %>
+      <%= link_to(Project.model_name.human(count: 2),
+                  projects_path,
+                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'projects')) %>
+      <%= link_to(Customer.model_name.human(count: 2),
+                  customers_path,
+                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'customers')) %>
+    </div>
+    <span class="nav-toggle" id=toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+      <%= link_to(Project.model_name.human(count: 2),
                 projects_path,
-                class: 'nav-item is-tab',
+                class: nav_is_active('nav-item is-tab is-hidden-tablet', 'projects'),
                 data: { turbolinks: false }) %>
+
+      <%= link_to(Customer.model_name.human(count: 2),
+                customers_path,
+                class: nav_is_active('nav-item is-tab is-hidden-tablet', 'customers'),
+                data: { turbolinks: false }) %>
+    </div>
   </div>
 </nav>
 <%= javascript_pack_tag 'menu' %>
