@@ -4,7 +4,7 @@ function searchShortcut() {
     return;
   }
 
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', function(event) {
     if (event.defaultPrevented || event.key !== 's') {
       return; // Do nothing if the event was already processed or key was not s
     }
