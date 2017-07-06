@@ -6,10 +6,12 @@
       <% end %>
       <%= link_to(Project.model_name.human(count: 2),
                   projects_path,
-                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'projects')) %>
+                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'projects'),
+                  data: { turbolinks: false }) %>
       <%= link_to(Customer.model_name.human(count: 2),
                   customers_path,
-                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'customers')) %>
+                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'customers'),
+                  data: { turbolinks: false }) %>
     </div>
     <span class="nav-toggle" id=toggle>
       <span></span>
