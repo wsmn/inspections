@@ -1,0 +1,27 @@
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-2 is-parent">
+    <div class="tile is-child">
+      <%= render('panel', active: :show, customer: @customer) %>
+    </div>
+  </div>
+  <div class="tile is-vertical is-5">
+    <div class="tile">
+      <div class="tile is-parent">
+        <div class="tile is-child">
+          <%= render(@customer) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tile is-parent is-vertical is-5">
+    <div class="tile is-child">
+      <%= render('projects', title: t('.active_projects'), status: 'active', projects: @customer.projects.active) %>
+    </div>
+    <div class="tile is-child">
+      <%= render('projects', title: t('.completed_projects'), status: 'completed', projects: @customer.projects.completed) %>
+    </div>
+    <div class="tile is-child">
+      <%= render('projects', title: t('.paused_projects'), status: 'paused', projects: @customer.projects.paused) %>
+    </div>
+  </div>
+</div>

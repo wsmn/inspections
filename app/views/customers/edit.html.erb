@@ -1,0 +1,38 @@
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-2 is-parent">
+    <div class="tile is-child">
+      <%= render('panel', active: :edit, customer: @customer) %>
+    </div>
+  </div>
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <div class="tile is-child">
+
+
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= Customer.model_name.human %>
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4"><%= @customer.name %></p>
+                  <%= simple_form_for(@customer) do |f| %>
+                    <%= f.input(:name) %>
+                    <%= f.input(:phone) %>
+                    <%= f.input(:address) %>
+                    <%= f.input(:email) %>
+                    <%= bulma_button(f) %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

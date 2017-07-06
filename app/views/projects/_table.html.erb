@@ -6,18 +6,16 @@
   <thead>
     <tr>
       <td> <%= Project.human_attribute_name(:title) %></td>
-      <td> <%= Project.human_attribute_name(:status) %></td>
       <td> <%= Customer.model_name.human %></td>
-      <td> <%= t('global.edit') %> </td>
+      <td> <%= Project.human_attribute_name(:status) %></td>
     </tr>
   </thead>
   <tbody>
     <% projects.each do |p| %>
       <tr>
         <td> <%= link_to(p.title, p) %> </td>
-        <td> <%= project_tag(p.status, pos: '', size: 'small') %> </td>
         <td> <%= link_to(p.customer, p.customer) %> </td>
-        <td> <%= link_to(fa_icon('wrench'), edit_project_path(p)) %> </td>
+        <td> <%= project_tag(p.status, pos: '', size: 'small') %> </td>
       </tr>
     <% end %>
   </tbody>

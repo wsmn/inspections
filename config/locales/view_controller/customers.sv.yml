@@ -11,3 +11,20 @@ sv:
 
     customer:
       project_id: "Kundnr: %{id}"
+
+    panel:
+      all_customers: Alla kunder
+      edit_customer: Redigera kund
+      show_customer: Visa kund
+      new_customer: Lägg till ny kund
+
+    show:
+      active_projects: Aktiva Projekt
+      completed_projects: Avslutade Projekt
+      paused_projects: Pausade Projekt
+
+    new:
+      title: Ny kund
+
+    destroy:
+      success: Kund raderades!

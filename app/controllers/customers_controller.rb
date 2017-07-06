@@ -4,18 +4,39 @@ class CustomersController < ApplicationController
     @customers = Customer.order(created_at: :desc)
   end
 
+  def destroy
+    Customer.find(params[:id]).destroy!
+    redirect_to(customers_path, notice: t('.success'))
+  end
+
   def create
     @customer = Customer.new(customer_params)
-
     if @customer.save
-      @customers = Customer.order(created_at: :desc)
-      render(:index)
+      redirect_to(customer_path(@customer), notice: t('.success'))
     else
-      render(json: { errors: @customer.errors }, status: :unprocessable_entity)
+      render(:new, status: 422)
     end
   end
 
   def edit
+    @customer = Customer.find(params[:id])
+  end
+
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
+  def new
+    @customer = Customer.new
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to(customer_path(@customer), notice: t('.success'))
+    else
+      render(:edit, status: 422)
+    end
   end
 
   private

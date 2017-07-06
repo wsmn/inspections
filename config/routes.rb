@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :entries
-  resources(:customers, only: %i[index create show edit])
+  resources(:customers)
   resources(:projects) do
     resources(:inspections) do
       resources(:answers, only: %i[create update destroy])
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources(:inspections, only: []) do
-    resources(:entries, only: [:create, :destroy]) do
+    resources(:entries, only: %i[create destroy]) do
       resources(:boolean_answers, only: %i[create update])
       resources(:text_answers, only: %i[create update])
     end
