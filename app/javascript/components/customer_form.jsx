@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CustomerUtils from 'components/customer_utils';
+import InputField from 'components/form_utils';
 
 
 class CustomerForm extends React.Component {
@@ -17,63 +18,38 @@ class CustomerForm extends React.Component {
 
     return (
       <form className="form" onSubmit={this.props.onFormSubmit}>
-        <div className="field">
-          <label className="label" htmlFor="name">Namn</label>
-          <p className="control">
-            <input
-              className="input"
-              type="text"
-              placeholder="Namn"
-              name="name"
-              value={this.props.fields.name}
-              onChange={this.props.onInputChange}
-            />
-          </p>
-          {errors.name}
-
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="phone">Telefon</label>
-          <p className="control">
-            <input
-              className="input"
-              type="text"
-              placeholder="Telefon"
-              name="phone"
-              value={this.props.fields.phone}
-              onChange={this.props.onInputChange}
-            />
-          </p>
-          {errors.phone}
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="address">Adress</label>
-          <p className="control">
-            <input
-              className="input"
-              type="text"
-              placeholder="Adress"
-              name="address"
-              value={this.props.fields.address}
-              onChange={this.props.onInputChange}
-            />
-          </p>
-          {errors.address}
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="email">Email</label>
-          <p className="control">
-            <input
-              className="input"
-              type="text"
-              placeholder="Email"
-              name="email"
-              value={this.props.fields.email}
-              onChange={this.props.onInputChange}
-            />
-          </p>
-          {errors.email}
-        </div>
+        <InputField
+          error={errors.name}
+          id="name"
+          title="Namn"
+          onChange={this.props.onInputChange}
+          value={this.props.fields.name}
+          type="text"
+        />
+        <InputField
+          error={errors.phone}
+          id="phone"
+          title="Telefon"
+          onChange={this.props.onInputChange}
+          value={this.props.fields.phone}
+          type="tel"
+        />
+        <InputField
+          error={errors.address}
+          id="address"
+          title="Adress"
+          onChange={this.props.onInputChange}
+          value={this.props.fields.address}
+          type="text"
+        />
+        <InputField
+          error={errors.email}
+          id="email"
+          title="Email"
+          onChange={this.props.onInputChange}
+          value={this.props.fields.email}
+          type="text"
+        />
         <div className="field">
           <p className="control">
             <button className="button is-primary" type="submit">
