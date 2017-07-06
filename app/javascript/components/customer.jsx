@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import CustomerUtils from 'components/customer_utils';
 
 class Customer extends React.Component {
   render() {
@@ -12,5 +14,11 @@ class Customer extends React.Component {
     );
   }
 }
+
+Customer.propTypes = {
+  customer: PropTypes.shape(
+    CustomerUtils.propTypesModel(),
+  ).isRequired,
+};
 
 export default Customer;
