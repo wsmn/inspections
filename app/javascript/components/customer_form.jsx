@@ -1,105 +1,82 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import CustomerUtils from 'components/customer_utils';
+
 
 class CustomerForm extends React.Component {
-  constructor() {
-    super();
-    const token_elem = document.querySelector('meta[name="csrf-token"]');
-    this.token = token_elem && token_elem.getAttribute("content");
-    this.state = {
-      name: '',
-      phone: '',
-      address: '',
-      email: '',
+  render() {
+    const errors = {};
+    if (this.props.errors) {
+      Object.keys(this.props.errors).forEach((key) => {
+        errors[key] = (
+          <p className="help is-danger">
+            {this.props.errors[key][0]}
+          </p>);
+      });
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    fetch("/customers", {
-      method: "post",
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': this.token,
-      },
-      body: JSON.stringify({
-        customer: this.state,
-      }),
-      credentials: 'same-origin'
-    });
-  }
-
-  valid(e) {
-    // return this.state.name && this.state.phone && this.state.address && this.state.email;
-    return this.state.name;
-  }
-
-  render() {
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.props.onFormSubmit}>
         <div className="field">
-          <label className="label">Namn</label>
+          <label className="label" htmlFor="name">Namn</label>
           <p className="control">
-            <input className="input"
-                   type="text"
-                   placeholder="Namn"
-                   name="name"
-                   value={this.state.name}
-                   onChange={this.handleInputChange}/>
+            <input
+              className="input"
+              type="text"
+              placeholder="Namn"
+              name="name"
+              value={this.props.fields.name}
+              onChange={this.props.onInputChange}
+            />
           </p>
+          {errors.name}
+
         </div>
         <div className="field">
-          <label className="label">Telefon</label>
+          <label className="label" htmlFor="phone">Telefon</label>
           <p className="control">
-            <input className="input"
-                   type="text"
-                   placeholder="Telefon"
-                   name="phone"
-                   value={this.state.phone}
-                   onChange={this.handleInputChange}/>
+            <input
+              className="input"
+              type="text"
+              placeholder="Telefon"
+              name="phone"
+              value={this.props.fields.phone}
+              onChange={this.props.onInputChange}
+            />
           </p>
+          {errors.phone}
         </div>
         <div className="field">
-          <label className="label">Adress</label>
+          <label className="label" htmlFor="address">Adress</label>
           <p className="control">
-            <input className="input"
-                   type="text"
-                   placeholder="Adress"
-                   name="address"
-                   value={this.state.address}
-                   onChange={this.handleInputChange}/>
+            <input
+              className="input"
+              type="text"
+              placeholder="Adress"
+              name="address"
+              value={this.props.fields.address}
+              onChange={this.props.onInputChange}
+            />
           </p>
+          {errors.address}
         </div>
         <div className="field">
-          <label className="label">Email</label>
+          <label className="label" htmlFor="email">Email</label>
           <p className="control">
-            <input className="input"
-                   type="text"
-                   placeholder="Email"
-                   name="email"
-                   value={this.state.email}
-                   onChange={this.handleInputChange}/>
+            <input
+              className="input"
+              type="text"
+              placeholder="Email"
+              name="email"
+              value={this.props.fields.email}
+              onChange={this.props.onInputChange}
+            />
           </p>
+          {errors.email}
         </div>
         <div className="field">
           <p className="control">
-            <button className="button is-primary"
-                    type="submit">
-                    {/* disabled={this.valid}> */}
+            <button className="button is-primary" type="submit">
               Skapa Kund
             </button>
           </p>
@@ -108,5 +85,23 @@ class CustomerForm extends React.Component {
     );
   }
 }
+
+CustomerForm.propTypes = {
+  fields: PropTypes.shape(
+    CustomerUtils.propTypesFields(),
+  ).isRequired,
+  errors: PropTypes.shape({
+    address: PropTypes.string,
+    email: PropTypes.string,
+    name: PropTypes.string,
+    phone: PropTypes.string,
+  }),
+  onInputChange: PropTypes.func.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
+};
+
+CustomerForm.defaultProps = {
+  errors: {},
+};
 
 export default CustomerForm;

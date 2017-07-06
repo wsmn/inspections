@@ -1,12 +1,9 @@
 import React from 'react';
 
 class CustomerSearch extends React.Component {
-
-
-  render () {
+  render() {
     return (
-
-        <div className="field has-addons">
+      <div className="field has-addons">
         <p className="control">
           <input className="input" type="text" placeholder="Hitta kund" />
         </p>
