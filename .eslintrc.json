@@ -1,0 +1,18 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "extensions": 0,
+      "no-extraneous-unresolved": 0,
+      "no-param-reassign": 1,
+      "no-unresolved": 0
+    }
+}
