@@ -5,7 +5,8 @@ function searchShortcut() {
   }
 
   document.addEventListener('keydown', function(event) {
-    if (event.defaultPrevented || event.key !== 's') {
+    const tag = event.target.tagName;
+    if (event.defaultPrevented || event.key !== 's' || tag === 'INPUT' || tag === 'TEXTAREA') {
       return; // Do nothing if the event was already processed or key was not s
     }
 
