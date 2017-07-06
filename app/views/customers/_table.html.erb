@@ -1,0 +1,24 @@
+<% headline ||= nil %>
+<% if headline.present? %>
+  <h4 class="subtitle"><%= headline %></h4>
+<% end %>
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <td> <%= Customer.human_attribute_name(:name) %></td>
+      <td> <%= Customer.human_attribute_name(:phone) %></td>
+      <td> <%= Customer.human_attribute_name(:address) %></td>
+      <td> <%= Customer.human_attribute_name(:email) %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.each do |c| %>
+      <tr>
+        <td> <%= link_to(c.name, c) %> </td>
+        <td> <%= c.phone %> </td>
+        <td> <%= c.address %> </td>
+        <td> <%= c.email %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

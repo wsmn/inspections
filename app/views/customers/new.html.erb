@@ -1,0 +1,27 @@
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-3 is-parent">
+    <div class="tile is-child">
+      <%= render('panel', active: :new) %>
+    </div>
+  </div>
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <div class="tile is-child">
+
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4"><%= t('.title') %></p>
+                    <%= render('form', customer:@customer) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="card project">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= title %>
+    </p>
+      <%= project_tag(status) %>
+  </header>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <ul>
+          <% projects.each do |project| %>
+            <li>
+              <%= link_to(project, project_path(project)) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

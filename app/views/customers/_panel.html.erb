@@ -1,0 +1,30 @@
+<% active ||= :none %>
+<% customer ||= nil %>
+<nav class="panel">
+  <%= active_panel(customers_path, active, :index) do %>
+    <span class="panel-icon">
+      <%= fa_icon('list') %>
+    </span>
+    <%= t('.all_customers') %>
+  <% end %>
+  <%= active_panel(new_customer_path, active, :new) do %>
+    <span class="panel-icon">
+      <%= fa_icon('plus') %>
+    </span>
+    <%= t('.new_customer') %>
+  <% end %>
+  <% if customer.present? %>
+    <%= active_panel(customer_path(customer), active, :show) do %>
+      <span class="panel-icon">
+        <%= fa_icon('address-card-o') %>
+      </span>
+      <%= t('.show_customer') %>
+    <% end %>
+    <%= active_panel(edit_customer_path(customer), active, :edit) do %>
+      <span class="panel-icon">
+        <%= fa_icon('wrench') %>
+      </span>
+      <%= t('.edit_customer') %>
+    <% end %>
+  <% end %>
+</nav>

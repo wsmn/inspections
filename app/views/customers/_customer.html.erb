@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card customer">
   <header class="card-header">
     <p class="card-header-title">
       <%= Customer.model_name.human %>
@@ -12,6 +12,8 @@
         <p class="title is-4"><%= customer.name %></p>
         <ul>
           <li><%= fa_icon('phone', text: customer.phone) %></li>
+          <li><%= fa_icon('home', text: customer.address) %></li>
+          <li><%= fa_icon('envelope', text: customer.email) %></li>
           <li><%= fa_icon('hashtag', text: t('.project_id', id: customer.id)) %></li>
         </ul>
       </div>
