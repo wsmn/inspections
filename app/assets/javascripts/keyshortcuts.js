@@ -1,18 +1,22 @@
-function searchShortcut() {
+function searchKeydown(event) {
+  const tag = event.target.tagName;
   const searchField = document.getElementById('search-field');
-  if (searchField === null) {
-    return;
+  if (searchField === null || event.defaultPrevented ||
+      event.key !== 's' || tag === 'INPUT' || tag === 'TEXTAREA') {
+    return; // Do nothing if the event was already processed or key was not s
   }
 
-  document.addEventListener('keydown', function(event) {
-    const tag = event.target.tagName;
-    if (event.defaultPrevented || event.key !== 's' || tag === 'INPUT' || tag === 'TEXTAREA') {
-      return; // Do nothing if the event was already processed or key was not s
-    }
-
-    searchField.focus();
-    event.preventDefault();
-  }, true);
+  searchField.focus();
+  event.preventDefault();
 }
 
-document.addEventListener('turbolinks:load', searchShortcut);
+function setupShortcuts() {
+  document.addEventListener('keydown', searchKeydown, true);
+}
+
+function removeShortcuts() {
+  document.removeEventListener('keydown', searchKeydown, true);
+}
+
+document.addEventListener('turbolinks:load', setupShortcuts);
+document.addEventListener('turbolinks:before-cache', removeShortcuts);
