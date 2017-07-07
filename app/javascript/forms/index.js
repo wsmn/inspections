@@ -1,5 +1,5 @@
 import datepickers from './datepicker';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   datepickers.initialize();
 });
