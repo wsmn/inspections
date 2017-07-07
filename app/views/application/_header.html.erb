@@ -6,11 +6,11 @@
       <% end %>
       <%= link_to(Project.model_name.human(count: 2),
                   projects_path,
-                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'projects'),
+                  class: nav_item_class(['projects', 'inspections', 'images'], hidden: :mobile),
                   data: { turbolinks: false }) %>
       <%= link_to(Customer.model_name.human(count: 2),
                   customers_path,
-                  class: nav_is_active('nav-item is-tab is-hidden-mobile', 'customers'),
+                  class: nav_item_class(['customers'], hidden: :mobile),
                   data: { turbolinks: false }) %>
     </div>
     <span class="nav-toggle" id=toggle>
@@ -21,12 +21,12 @@
     <div class="nav-right nav-menu">
       <%= link_to(Project.model_name.human(count: 2),
                 projects_path,
-                class: nav_is_active('nav-item is-tab is-hidden-tablet', 'projects'),
+                class: nav_item_class(['projects', 'inspections', 'images'], hidden: :tablet),
                 data: { turbolinks: false }) %>
 
       <%= link_to(Customer.model_name.human(count: 2),
                 customers_path,
-                class: nav_is_active('nav-item is-tab is-hidden-tablet', 'customers'),
+                class: nav_item_class(['customers'], hidden: :tablet),
                 data: { turbolinks: false }) %>
     </div>
   </div>
