@@ -1,0 +1,10 @@
+var resultTag = document.getElementsByClassName('search-results')[0];
+<% if @customers.any? %>
+  if (resultTag != null) {
+    resultTag.innerHTML = "<%= j render('/customers/table', customers: @customers, headline: 'Sökresultat') %><hr/>"
+  }
+<% else %>
+  if (resultTag != null) {
+    resultTag.innerHTML = "Inga resultat.<hr>"
+  }
+<% end %>

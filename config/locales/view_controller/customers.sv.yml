@@ -19,6 +19,7 @@ sv:
       new_customer: Lägg till ny kund
 
     show:
+      title: Kund
       active_projects: Aktiva Projekt
       completed_projects: Avslutade Projekt
       paused_projects: Pausade Projekt
@@ -28,3 +29,6 @@ sv:
 
     destroy:
       success: Kund raderades!
+
+    edit:
+      title: Redigera kund

@@ -1,4 +1,4 @@
-<h2 class="subtitle is-3"><%= t('.title') %></h2>
+<h1 class="title is-1"><%= t('.title') %></h1>
 
 <div class="columns">
   <div class="column is-one-quarter">
@@ -7,7 +7,7 @@
 
 
   <div class="column">
-    <%= render('/searches/form', target: :project) %>
+    <%= render('/searches/form', target: :customer) %>
     <%= render('table', customers: @customers) %>
   </div>
 </div>
