@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   resources(:questions, only: %i[create new index edit update destroy])
   resource(:search, only: []) do
-    post(:project, on: :collection)
+    post(:project)
+    post(:customer)
   end
 
   root(controller: :projects, action: :index)

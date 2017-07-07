@@ -1,5 +1,5 @@
 <%= simple_form_for(customer) do |f| %>
-  <%= f.input(:name) %>
+  <%= f.input(:name, input_html: { autofocus: true }) %>
   <%= f.input(:phone) %>
   <%= f.input(:address) %>
   <%= f.input(:email) %>
