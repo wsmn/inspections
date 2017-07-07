@@ -1,0 +1,8 @@
+<%= simple_form_for([project, image]) do |f| %>
+  <% if image.thumb.present? %>
+    <%= image_tag(image.thumb, class: 'image is-128x128') %>
+  <% end %>
+  <%= f.input(:file) %>
+  <%= f.input(:description) %>
+  <%= bulma_button(f, parent: project) %>
+<% end %>

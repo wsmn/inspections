@@ -26,4 +26,17 @@
     </span>
     <%= t('.new_inspection') %>
   <% end %>
+  <%= active_panel(project_images_path(project), active, :index_images) do %>
+    <span class="panel-icon">
+      <%= fa_icon('picture-o') %>
+    </span>
+    <%= t('.all_images') %>
+  <% end %>
+
+  <%= active_panel(new_project_image_path(project), active, :new_image) do %>
+    <span class="panel-icon">
+      <%= fa_icon('camera') %>
+    </span>
+    <%= t('.new_image') %>
+  <% end %>
 </nav>

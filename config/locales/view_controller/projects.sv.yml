@@ -17,6 +17,8 @@ sv:
       new_inspection: Ny besiktning
       show_project: Visa projektet
       edit_project: Redigera projekt
+      new_image: Ladda upp bild
+      all_images: Alla bilder
 
     panel:
       all_projects: Alla projekt

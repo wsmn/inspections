@@ -1,0 +1,19 @@
+sv:
+  images:
+    create:
+      success: Bilden laddades upp
+
+    update:
+      success: Bilden uppdaterades
+
+    destroy:
+      success: Bilden raderades
+
+    index:
+      title: Alla bilder
+
+    edit:
+      title: Redigera bild
+
+    new:
+      title: Ladda upp bild

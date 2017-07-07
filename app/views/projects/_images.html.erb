@@ -1,21 +1,24 @@
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      <%= t('.title') %>
-    </p>
-    <%= link_to(fa_icon('image'), '#', class: 'card-header-icon') %>
-  </header>
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <%= image_tag('ka.svg') %>
-    </figure>
-  </div>
+<% if image.present? %>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <%= t('.title') %>
+      </p>
+      <%= link_to(fa_icon('image'), project_images_path(project),
+                                    class: 'card-header-icon') %>
+    </header>
+    <div class="card-image">
+      <figure class="image">
+        <%= image_tag(image.large) %>
+      </figure>
+    </div>
 
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        Images
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <%= simple_format(image.description) %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
