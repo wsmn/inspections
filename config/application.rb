@@ -23,5 +23,19 @@ module Inspections
                                                  '**',
                                                  '*.{rb,yml}')]
     config.i18n.default_locale = :sv
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.model_specs false
+      g.controller_specs false
+      g.view_specs false
+      g.helper_specs false
+      g.stylesheets false
+      g.scaffold_stylesheet false
+      g.jbuilder false
+      g.system_tests false
+      g.routing_specs false
+    end
   end
 end
