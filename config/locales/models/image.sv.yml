@@ -1,0 +1,14 @@
+sv:
+  activerecord:
+    models:
+      image:
+        one: Bild
+        other: Bilder
+
+    attributes:
+      image:
+        description: Beskrivning
+        file: Bild
+        project_id: Projekt
+        project: Projekt
+        taken_at: Bild tagen

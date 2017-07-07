@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources(:customers)
   resources(:projects) do
+    resources(:images, only: %i[create update destroy index new edit])
     resources(:inspections) do
       resources(:answers, only: %i[create update destroy])
     end

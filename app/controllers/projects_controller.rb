@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.includes(:customer).find(params[:id])
     @inspections = @project.inspections.upcoming
+    @image = @project.images.sample
   end
 
   def edit
