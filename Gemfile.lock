@@ -46,7 +46,7 @@ GEM
     bullet (5.5.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
-    bulma-rails (0.4.2)
+    bulma-rails (0.4.3)
       sass (~> 3.2)
     byebug (9.0.6)
     capybara (2.14.2)
@@ -246,4 +246,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
