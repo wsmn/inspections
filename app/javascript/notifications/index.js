@@ -1,5 +1,5 @@
 import notificationHide from './notifications';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   notificationHide.initialize();
 });
