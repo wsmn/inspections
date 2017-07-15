@@ -18,6 +18,7 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'skylight' # Monitoring
 gem 'textacular', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
