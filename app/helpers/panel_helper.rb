@@ -12,4 +12,12 @@ module PanelHelper
       link_to(path, class: css) { yield }
     end
   end
+
+  def active_menu(path, active, current)
+    if active == current
+      content_tag(:li) { content_tag(:p, class: 'is-active') { yield } }
+    else
+      content_tag(:li) { link_to(path) { yield } }
+    end
+  end
 end

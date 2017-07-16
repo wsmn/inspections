@@ -1,0 +1,29 @@
+.aside {
+  background: $primary-background;
+  padding: 2rem 1rem 1rem 1.5rem;
+
+  &.is-fullheight {
+    min-height: 100vh;
+  }
+
+  .menu-list {
+    a {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    p {
+      border-radius: 2px;
+      color: #4a4a4a;
+      display: block;
+      padding: .5em .75em;
+
+      &.is-active {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
