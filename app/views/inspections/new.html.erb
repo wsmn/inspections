@@ -1,12 +1,8 @@
+<% content_for(:sidemenu) do %>
+  <%= render('projects/panel', active: :new_project, project: @project) %>
+<% end %>
 <h1 class="title is-1"><%= Project.model_name.human %></h1>
 <h2 class="subtitle is-3"><%= @project %></h2>
 <h2 class="subtitle is-4"><%= t('.title') %></h2>
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <%= render('projects/panel', active: :new_project, project: @project) %>
-  </div>
-  <div class="column">
-    <%= render('form', inspection: @inspection, project: @project) %>
-  </div>
-</div>
+<%= render('form', inspection: @inspection, project: @project) %>

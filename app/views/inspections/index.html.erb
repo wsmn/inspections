@@ -1,32 +1,28 @@
+<% content_for(:sidemenu) do %>
+  <%= render('projects/panel', active: :index_inspections, project: @project) %>
+<% end %>
 <h1 class="title is-1"><%= Project.model_name.human %></h1>
 <h2 class="subtitle is-3"><%= @project %></h2>
 <h2 class="subtitle is-4"><%= t('.title') %></h2>
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <%= render('projects/panel', active: :index_inspections, project: @project) %>
-  </div>
-  <div class="column">
-    <table class="table is-striped">
-      <thead>
-        <tr>
-          <td> <%= Inspection.human_attribute_name(:on) %></td>
-          <td> <%= t('global.edit') %> </td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @inspections.each do |i| %>
-          <tr>
-            <td>
-              <%= link_to(l(i.at_date), project_inspection_path(@project, i)) %>
-            </td>
-            <td>
-              <%= link_to(fa_icon('wrench'),
-                          edit_project_inspection_path(@project, i)) %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <td> <%= Inspection.human_attribute_name(:on) %></td>
+      <td> <%= t('global.edit') %> </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inspections.each do |i| %>
+      <tr>
+        <td>
+          <%= link_to(l(i.at_date), project_inspection_path(@project, i)) %>
+        </td>
+        <td>
+          <%= link_to(fa_icon('wrench'),
+                      edit_project_inspection_path(@project, i)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
