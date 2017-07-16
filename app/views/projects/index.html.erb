@@ -1,13 +1,10 @@
+<% content_for(:sidemenu) do %>
+  <%= render('panel', active: :index, project: @project) %>
+  <%= render('filter', active: @status) %>
+<% end %>
+
 <%= project_title %>
 <h2 class="subtitle is-3"><%= t('.title') %></h2>
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <%= render('panel', active: :index, project: @project) %>
-    <%= render('filter', active: @status) %>
-  </div>
-  <div class="column">
-    <%= render('/searches/form', target: :project) %>
-    <%= render('table', projects: @projects) %>
-  </div>
-</div>
+<%= render('/searches/form', target: :project) %>
+<%= render('table', projects: @projects) %>
