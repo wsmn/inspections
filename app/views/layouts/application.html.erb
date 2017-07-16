@@ -15,10 +15,13 @@
     <header>
       <%= render 'header' %>
     </header>
-    <%= render 'flashes' %>
-    <section class="section">
-      <div class="container">
-        <%= yield %>
+    <div class="columns">
+      <%= render('application/sidemenu') %>
+      <div class="column">
+        <section class="section">
+          <%= render('flashes') %>
+          <%= yield %>
+        </section>
       </div>
     </div>
   </body>

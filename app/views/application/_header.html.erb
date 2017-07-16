@@ -1,18 +1,10 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <%= link_to(root_path, class: 'nav-item') do %>
-        <%= image_tag('ka.svg', style: 'width: 8rem;') %>
-      <% end %>
-      <%= link_to(Project.model_name.human(count: 2),
-                  projects_path,
-                  class: nav_item_class(['projects', 'inspections', 'images'], hidden: :mobile),
-                  data: { turbolinks: false }) %>
-      <%= link_to(Customer.model_name.human(count: 2),
-                  customers_path,
-                  class: nav_item_class(['customers'], hidden: :mobile),
-                  data: { turbolinks: false }) %>
+      <%= link_to(image_tag('ka.svg', style: 'width: 8rem;'),
+                  root_path, class: 'nav-item') %>
     </div>
+
     <span class="nav-toggle" id=toggle>
       <span></span>
       <span></span>
@@ -21,13 +13,11 @@
     <div class="nav-right nav-menu">
       <%= link_to(Project.model_name.human(count: 2),
                 projects_path,
-                class: nav_item_class(['projects', 'inspections', 'images'], hidden: :tablet),
-                data: { turbolinks: false }) %>
+                class: nav_item_class(['projects', 'inspections', 'images'])) %>
 
       <%= link_to(Customer.model_name.human(count: 2),
                 customers_path,
-                class: nav_item_class(['customers'], hidden: :tablet),
-                data: { turbolinks: false }) %>
+                class: nav_item_class(['customers'])) %>
     </div>
   </div>
 </nav>
