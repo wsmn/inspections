@@ -1,30 +1,25 @@
 <% active ||= :none %>
 <% customer ||= nil %>
-<nav class="panel">
-  <%= active_panel(customers_path, active, :index) do %>
-    <span class="panel-icon">
-      <%= fa_icon('list') %>
-    </span>
+<p class="menu-label">
+  <%= Customer.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(customers_path, active, :index) do %>
+    <%= fa_icon('list') %>
     <%= t('.all_customers') %>
   <% end %>
-  <%= active_panel(new_customer_path, active, :new) do %>
-    <span class="panel-icon">
-      <%= fa_icon('plus') %>
-    </span>
+  <%= active_menu(new_customer_path, active, :new) do %>
+    <%= fa_icon('plus') %>
     <%= t('.new_customer') %>
   <% end %>
   <% if customer.present? %>
-    <%= active_panel(customer_path(customer), active, :show) do %>
-      <span class="panel-icon">
-        <%= fa_icon('address-card-o') %>
-      </span>
+    <%= active_menu(customer_path(customer), active, :show) do %>
+      <%= fa_icon('address-card-o') %>
       <%= t('.show_customer') %>
     <% end %>
-    <%= active_panel(edit_customer_path(customer), active, :edit) do %>
-      <span class="panel-icon">
-        <%= fa_icon('wrench') %>
-      </span>
+    <%= active_menu(edit_customer_path(customer), active, :edit) do %>
+      <%= fa_icon('wrench') %>
       <%= t('.edit_customer') %>
     <% end %>
   <% end %>
-</nav>
+</ul>

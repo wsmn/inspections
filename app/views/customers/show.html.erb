@@ -1,11 +1,11 @@
 <h1 class="title is-1"><%= t('.title') %></h1>
+
+<% content_for(:sidemenu) do %>
+  <%= render('panel', active: :show, customer: @customer) %>
+<% end %>
+
 <div class="tile is-ancestor">
-  <div class="tile is-vertical is-2 is-parent">
-    <div class="tile is-child">
-      <%= render('panel', active: :show, customer: @customer) %>
-    </div>
-  </div>
-  <div class="tile is-vertical is-5">
+  <div class="tile is-vertical is-6">
     <div class="tile">
       <div class="tile is-parent">
         <div class="tile is-child">
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <div class="tile is-parent is-vertical is-5">
+  <div class="tile is-parent is-vertical is-6">
     <div class="tile is-child">
       <%= render('projects', title: t('.active_projects'), status: 'active', projects: @customer.projects.active) %>
     </div>
