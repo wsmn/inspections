@@ -1,14 +1,12 @@
+<% content_for(:sidemenu) do %>
+  <%= render('panel', active: :show_project, project: @project) %>
+<% end %>
+
 <%= project_title(@project.status) %>
 <h2 class="subtitle is-3"><%= @project %></h2>
 
-
 <div class="tile is-ancestor">
-  <div class="tile is-vertical is-4 is-parent">
-    <div class="tile is-child">
-      <%= render('panel', active: :show_project, project: @project) %>
-    </div>
-  </div>
-  <div class="tile is-vertical is-8">
+  <div class="tile is-vertical">
     <div class="tile">
       <div class="tile is-parent">
         <div class="tile is-child">

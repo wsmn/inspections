@@ -1,22 +1,22 @@
 <% active ||= :none %>
 <% project ||= nil %>
-<% if project.present? %>
-  <%= render('/projects/project_panel', project: project, active: active) %>
-  <hr />
-<% end %>
 
-<nav class="panel">
-  <%= active_panel(projects_path, active, :index) do %>
-    <span class="panel-icon">
-      <%= fa_icon('list') %>
-    </span>
+<p class="menu-label">
+  <%= Project.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(projects_path, active, :index) do %>
+    <%= fa_icon('list') %>
     <%= t('.all_projects') %>
   <% end %>
 
-  <%= active_panel(new_project_path, active, :new) do %>
-    <span class="panel-icon">
-      <%= fa_icon('plus-square') %>
-    </span>
+  <%= active_menu(new_project_path, active, :new) do %>
+    <%= fa_icon('plus-square') %>
     <%= t('.new') %>
   <% end %>
-</nav>
+</ul>
+
+<% if project.present? %>
+  <br />
+  <%= render('/projects/project_panel', project: project, active: active) %>
+<% end %>
