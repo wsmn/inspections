@@ -1,35 +1,31 @@
+<% content_for(:sidemenu) do %>
+  <%= render('projects/panel', active: :index_images, project: @project) %>
+<% end %>
 <h1 class="title is-1"><%= Project.model_name.human %></h1>
 <h2 class="subtitle is-3"><%= @project %></h2>
 <h2 class="subtitle is-4"><%= t('.title') %></h2>
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <%= render('projects/panel', active: :index_images, project: @project) %>
-  </div>
-  <div class="column">
-    <table class="table is-striped">
-      <thead>
-        <tr>
-          <td> <%= Image.human_attribute_name(:file) %></td>
-          <td> <%= Image.human_attribute_name(:description) %></td>
-          <td> <%= Image.human_attribute_name(:taken_at) %></td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @images.each do |image| %>
-          <tr>
-            <td>
-              <%= link_to(edit_project_image_path(@project, image)) do %>
-                <%= image_tag(image.thumb, class: 'image is-96x96') %>
-              <% end %>
-            </td>
-            <td>
-              <%= simple_format(image.description) %>
-            </td>
-            <td><%= l(image.taken_at, format: :long) if image.taken_at.present? %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <td> <%= Image.human_attribute_name(:file) %></td>
+      <td> <%= Image.human_attribute_name(:description) %></td>
+      <td> <%= Image.human_attribute_name(:taken_at) %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td>
+          <%= link_to(edit_project_image_path(@project, image)) do %>
+            <%= image_tag(image.thumb, class: 'image is-96x96') %>
+          <% end %>
+        </td>
+        <td>
+          <%= simple_format(image.description) %>
+        </td>
+        <td><%= l(image.taken_at, format: :long) if image.taken_at.present? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
