@@ -1,0 +1,29 @@
+.navbar-menu {
+  box-shadow: none;
+
+  .navbar-item {
+    &.is-tab {
+      border-bottom: 1px solid transparent;
+      border-top: 1px solid transparent;
+      padding-bottom: calc(0.75rem - 1px);
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &:hover {
+        background-color: transparent;
+        border-bottom-color: $primary;
+        border-top-color: transparent;
+      }
+
+      &.is-active {
+        border-bottom: 3px solid $primary;
+        color: $primary;
+        padding-bottom: calc(0.75rem - 3px)
+      }
+    }
+
+    &.is-active {
+      background-color: transparent;
+    }
+  }
+}

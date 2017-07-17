@@ -5,7 +5,8 @@
 const menuToggle = {
   addListener(event) {
     event.preventDefault();
-    const menuNodes = document.getElementsByClassName('nav-menu');
+    console.log(event);
+    const menuNodes = document.getElementsByClassName('navbar-menu');
     const menu = menuNodes[0];
     const active = menu.classList.contains('is-active');
     if (active) {
@@ -15,12 +16,12 @@ const menuToggle = {
     }
   },
   initialize() {
-    const toggleNode = document.getElementById('toggle');
-    toggleNode.addEventListener('click', this.addListener);
+    const burgerNode = document.getElementsByClassName('navbar-burger')[0];
+    burgerNode.addEventListener('click', this.addListener);
   },
   destroy() {
-    const toggleNode = document.getElementById('toggle');
-    toggleNode.removeEventListener('click', this.addListener);
+    const burgerNode = document.getElementsByClassName('navbar-burger')[0];
+    burgerNode.removeEventListener('click', this.addListener);
   },
 };
 
