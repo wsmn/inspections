@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Questions used for inspections
+# Time Entry
 class TimeEntry < ApplicationRecord
   has_many(:projects)
 
