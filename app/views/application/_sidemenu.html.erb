@@ -1,6 +1,13 @@
 <aside class="column menu is-2 aside is-fullheight is-hidden-mobile">
   <ul class="menu-list">
     <li>
+      <%= link_to(root_path,
+                  class: aside_item_class(['home'])) do %>
+        <%= fa_icon('home') %>
+        <%= Home.model_name.human(count: 2) %>
+      <% end %>
+    </li>
+    <li>
       <%= link_to(projects_path,
                   class: aside_item_class(['projects', 'inspections', 'images'])) do %>
         <%= fa_icon('tasks') %>
@@ -12,6 +19,13 @@
                   class: aside_item_class(['customers'])) do %>
         <%= fa_icon('users') %>
         <%= Customer.model_name.human(count: 2) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to(time_entries_path,
+                  class: aside_item_class(['timeEntry'])) do %>
+        <%= fa_icon('clock-o') %>
+        <%= TimeEntry.model_name.human(count: 2) %>
       <% end %>
     </li>
   </ul>

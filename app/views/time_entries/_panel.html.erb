@@ -1,18 +1,15 @@
 <% active ||= :none %>
 <% timeEntry ||= nil %>
-
-<nav class="panel">
-  <%= active_panel(time_entries_path, active, :index) do %>
-    <span class="panel-icon">
-      <%= fa_icon('list') %>
-    </span>
+<p class="menu-label">
+  <%= TimeEntry.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(time_entries_path, active, :index) do %>
+    <%= fa_icon('list') %>
     <%= t('.all_time_entries') %>
   <% end %>
-
-  <%= active_panel(new_time_entry_path, active, :new) do %>
-    <span class="panel-icon">
+  <%= active_menu(new_time_entry_path, active, :new) do %>
       <%= fa_icon('plus') %>
-    </span>
     <%= t('.new_time_entry') %>
   <% end %>
-</nav>
+</ul>

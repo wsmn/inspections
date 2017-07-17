@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources(:home)
   resources(:customers)
-
   resources(:time_entries, only: %i[index new])
   resources(:projects) do
     resources(:images, only: %i[create update destroy index new edit])
@@ -24,5 +24,5 @@ Rails.application.routes.draw do
     post(:customer)
   end
 
-  root(controller: :projects, action: :index)
+  root(controller: :home, action: :index)
 end

@@ -11,6 +11,10 @@
       <span></span>
     </span>
     <div class="navbar-right navbar-menu">
+      <%= link_to(Home.model_name.human(count: 2),
+                root_path,
+                class: nav_item_class(['home'])) %>
+
       <%= link_to(Project.model_name.human(count: 2),
                 projects_path,
                 class: nav_item_class(['projects', 'inspections', 'images'])) %>
@@ -23,4 +27,4 @@
                 time_entries_path,
                 class: nav_item_class(['timeEntry'])) %>
     </div>
-</nav> -->
+</nav>

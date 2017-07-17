@@ -1,9 +1,6 @@
-# Controller to handle CRUD-actions for customers
+# Controller for handling Time Entries
 class TimeEntriesController < ApplicationController
   def index
-    @questions = Question.all
-  end
-  def new
-    
+
   end
 end
