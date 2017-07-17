@@ -1,0 +1,6 @@
+<% content_for(:sidemenu) do %>
+    <%= render('panel', active: :index) %>
+<% end %>
+<h1 class="title is-1"><%= t('.title') %></h1>
+
+<%= render('table', time_entries: @time_entries) %>

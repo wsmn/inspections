@@ -1,0 +1,66 @@
+<% content_for(:sidemenu) do %>
+  <%= render('panel', active: :new) %>
+<% end %>
+<h1 class="title is-1"><%= t('.title') %></h1>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Projekt</label>
+  </div>
+  <div class="field-body">
+    <div class="field has-addons">
+      <p class="control">
+        <input class="input" type="search" placeholder="Sök projekt">
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Meddelande</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input" type="text" placeholder="Vad har gjorts?">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Tid</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-grouped">
+      <p class="control">
+        <a class="button">
+          1h
+        </a>
+      </p>
+      <p class="control">
+        <a class="button" value="9">
+          30min
+        </a>
+      </p>
+
+      <div class="control">
+        <input class="input" type="text" id="time">
+      </div>
+      <p class="control">
+        <a class="button is-info">
+          Lägg till
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function addTime(time){
+      totalTime = document.getElementById('time');
+      totalTime.value = totalTime.value? parseInt(totalTime.value) + parseInt(time) : parseInt(time);
+  }
+</script>
