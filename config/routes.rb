@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   resources(:customers)
+
+  resources(:time_entries, only: %i[index new])
   resources(:projects) do
     resources(:images, only: %i[create update destroy index new edit])
     resources(:inspections) do

@@ -1,0 +1,16 @@
+sv:
+  model:
+    time_entry:
+      none: "nope"
+
+  activerecord:
+    models:
+      time_entry:
+        one: Tidslogg
+        other: Tidsloggar
+
+    attributes:
+      time_entry:
+        project: Projekt
+        message: Meddelande
+        time: Tid
