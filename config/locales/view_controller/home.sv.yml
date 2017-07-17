@@ -1,0 +1,13 @@
+sv:
+  home:
+    index:
+      title: Hem
+
+    panel:
+      home: Hem
+
+    shortcuts:
+      shortcuts: Genvägar
+      create_new_project: Skapa nytt projekt
+      add_new_customer: Lägg till ny kund
+      new_time_entry: Ny tidslogg
