@@ -1,23 +1,33 @@
-<nav class="nav has-shadow">
-  <div class="container">
-    <div class="nav-left">
-      <%= link_to(image_tag('ka.svg', style: 'width: 8rem;'),
-                  root_path, class: 'nav-item') %>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <%= link_to(root_path, class: 'navbar-item') do %>
+      <%= image_tag('ka.svg', style: 'width: 8rem;') %>
+    <% end %>
+    <div class="navbar-burger burger" data-target="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
 
-    <span class="nav-toggle" id=toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start">
       <%= link_to(Project.model_name.human(count: 2),
-                projects_path,
-                class: nav_item_class(['projects', 'inspections', 'images'])) %>
-
-      <%= link_to(Customer.model_name.human(count: 2),
-                customers_path,
-                class: nav_item_class(['customers'])) %>
+                  projects_path,
+                  class: navbar_is_active('navbar-item is-tab is-hidden-desktop', 'projects'),
+                  data: { turbolinks: false }) %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <%= link_to(Customer.model_name.human(count: 2),
+                    customers_path,
+                    class: navbar_is_active('navbar-item is-tab is-hidden-desktop', 'customers'),
+                    data: { turbolinks: false }) %>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <%= link_to(TimeEntry.model_name.human(count: 2),
+                    time_entries_path,
+                    class: navbar_is_active('navbar-item is-tab is-hidden-desktop', 'time_entries'),
+                    data: { turbolinks: false }) %>
+      </div>
     </div>
   </div>
 </nav>

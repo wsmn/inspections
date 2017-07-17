@@ -1,0 +1,17 @@
+<% active ||= :none %>
+<% time_entry ||= nil %>
+
+<p class="menu-label">
+  <%= TimeEntry.model_name.human(count: 2) %>
+</p>
+<ul class="menu-list">
+  <%= active_menu(time_entries_path, active, :index) do %>
+    <%= fa_icon('list') %>
+    <%= t('.all_time_entries') %>
+  <% end %>
+
+  <%= active_menu(new_time_entry_path, active, :new) do %>
+    <%= fa_icon('plus') %>
+    <%= t('.new_time_entry') %>
+  <% end %>
+</ul>

@@ -14,6 +14,13 @@
         <%= Customer.model_name.human(count: 2) %>
       <% end %>
     </li>
+    <li>
+      <%= link_to(time_entries_path,
+                  class: aside_item_class(['time_entries'])) do %>
+        <%= fa_icon('clock-o') %>
+        <%= TimeEntry.model_name.human(count: 2) %>
+      <% end %>
+    </li>
   </ul>
   <%= yield(:sidemenu) %>
 </aside>

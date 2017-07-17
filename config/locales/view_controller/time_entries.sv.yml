@@ -1,0 +1,11 @@
+sv:
+  time_entries:
+    index:
+      title: Tidslogg
+
+    panel:
+      all_time_entries: Alla tidsloggar
+      new_time_entry: Ny tidslogg
+
+    new:
+      title: Ny tidslogg

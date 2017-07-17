@@ -1,0 +1,14 @@
+<% headline ||= nil %>
+<% if headline.present? %>
+  <h4 class="subtitle"><%= headline %></h4>
+<% end %>
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <td> <%= TimeEntry.human_attribute_name(:project) %></td>
+      <td> <%= TimeEntry.human_attribute_name(:message) %></td>
+      <td> <%= TimeEntry.human_attribute_name(:time) %></td>
+    </tr>
+  </thead>
+
+</table>
