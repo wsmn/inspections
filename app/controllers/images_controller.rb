@@ -2,6 +2,8 @@
 
 # Handles images for projects and inspections
 class ImagesController < ApplicationController
+  before_action(:require_login)
+
   def index
     @project = Project.find(params[:project_id])
     @images = @project.images.taken_at

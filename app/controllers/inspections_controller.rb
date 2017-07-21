@@ -2,6 +2,8 @@
 
 # Handles inspections and their questions
 class InspectionsController < ApplicationController
+  before_action(:require_login)
+
   def index
     @project = Project.find(params[:project_id])
     @inspections = @project.inspections.by_date

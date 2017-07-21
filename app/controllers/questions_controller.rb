@@ -2,6 +2,8 @@
 
 # Managing questions
 class QuestionsController < ApplicationController
+  before_action(:require_login)
+
   def index
     @questions = Question.all
   end

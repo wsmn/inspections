@@ -37,5 +37,7 @@ module Inspections
       g.system_tests false
       g.routing_specs false
     end
+
+    config.x.app_url = ENV.fetch('APP_URL') { 'kontrollansvarig.se' }
   end
 end

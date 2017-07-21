@@ -2,6 +2,8 @@
 
 # Controller for handling projects
 class ProjectsController < ApplicationController
+  before_action(:require_login)
+
   def index
     @status = params[:status]
     @projects = Project.includes(:customer)
