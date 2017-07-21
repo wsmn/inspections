@@ -2,6 +2,8 @@
 
 # Save text answers
 class TextAnswersController < ApplicationController
+  before_action(:require_login)
+
   def create
     load_inspections
     @answer = @entry.build_answer(text_answer_params)

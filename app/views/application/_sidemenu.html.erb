@@ -30,4 +30,24 @@
     </li>
   </ul>
   <%= yield(:sidemenu) %>
+
+  <p class="menu-label">Användare</p>
+  <ul class="menu-list">
+    <% if signed_in? %>
+      <li><%= current_user.email %></li>
+      <li>
+        <%= link_to(sign_out_path, method: :delete) do %>
+          <%= fa_icon('user') %>
+          <%= t('.sign_out') %>
+        <% end %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to(sign_in_path) do %>
+          <%= fa_icon('user') %>
+          <%= t('.sign_in') %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </aside>

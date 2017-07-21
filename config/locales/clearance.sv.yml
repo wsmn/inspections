@@ -1,0 +1,53 @@
+sv:
+  clearance:
+    models:
+      clearance_mailer:
+        change_password: Byt lösenord
+  clearance_mailer:
+    change_password:
+      closing: Om du inte efterfrågade detta, bortse från mailet. Ditt lösenord har inte ändrats.
+      link_text: Byt mitt lösenord
+      opening: "Någon, förhoppningsvis du, har efterfrågat en länk för att byta lösenord:"
+  flashes:
+    failure_after_create: Epost eller lösenord är inte giltligt.
+    failure_after_update: Lösenord kan inte vara tomt.
+    failure_when_forbidden: Dubbelkolla adressen eller försök skicka in formuläret igen.
+    failure_when_not_signed_in: Vänligen logga in för att fortsätta.
+  helpers:
+    label:
+      password:
+        email: Epost
+      password_reset:
+        password: Välj lösenord
+    submit:
+      password:
+        submit: Byt lösenord
+      password_reset:
+        submit: Spara lösenord
+      session:
+        submit: Logga in
+      user:
+        create: Skapa konto
+  layouts:
+    application:
+      sign_in: Logga in
+      sign_out: Logga ut
+  passwords:
+    create:
+      description: Du får strax ett mail med instruktioner för att byta lösenord.
+    edit:
+      description: Ditt lösenord har återställts. Välj ett nytt lösenord nedan.
+      title: Byt ditt lösenord
+    new:
+      description: Fyll i din mailadress för att få en länk för återställning av ditt lösenord.
+      title: Återställ lösenord
+  sessions:
+    form:
+      forgot_password: Glömt lösenord?
+      sign_up: Skapa konto
+    new:
+      title: Logga in
+  users:
+    new:
+      sign_in: Logga in
+      title: Skapa konto

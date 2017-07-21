@@ -2,6 +2,8 @@
 
 # Handles creation of inspection questions and such.
 class EntriesController < ApplicationController
+  before_action(:require_login)
+
   def create
     @inspection = Inspection.find(params[:inspection_id])
     @entry = @inspection.entries.build(entry_params)

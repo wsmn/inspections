@@ -1,0 +1,10 @@
+<h1 class="title"><%= t('.title') %></h1>
+<div id="clearance" class="password-reset">
+
+  <p><%= t('.description') %></p>
+  <%= simple_form_for(:password, url: passwords_path) do |f| %>
+    <%= f.input(:email, input_html: { autofocus: true },
+                        label: t('helpers.label.password.email')) %>
+    <%= bulma_button(f, text: t('helpers.submit.password.submit')) %>
+  <% end %>
+</div>

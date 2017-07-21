@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SearchesController < ApplicationController
+  before_action(:require_login)
+
   def project
     @projects = Project.includes(:customer)
                        .text_search(search_param)

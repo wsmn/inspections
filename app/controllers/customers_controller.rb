@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 # Controller to handle CRUD-actions for customers
 class CustomersController < ApplicationController
+  before_action(:require_login)
   def index
     @customers = Customer.order(created_at: :desc)
   end
