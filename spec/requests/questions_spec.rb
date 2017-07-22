@@ -4,6 +4,7 @@ require 'rails_helper'
 RSpec.describe('Questions', type: :request) do
   describe('GET /questions') do
     it('views questions and creates a new') do
+      sign_in
       get(questions_path)
       expect(response).to have_http_status(200)
 

@@ -44,4 +44,6 @@ RSpec.configure do |config|
 
   # Allow for route-helpers in tests
   config.include Rails.application.routes.url_helpers
+
+  config.include(RequestMacro, type: :request)
 end
