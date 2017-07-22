@@ -5,6 +5,7 @@ RSpec.describe('Inspections') do
   let(:project) { create(:project) }
   let(:question) { create(:question) }
   it('vists inspections and creates a new') do
+    sign_in
     get(project_path(project))
     expect(response).to have_http_status(200)
     get(new_project_inspection_path(project))
