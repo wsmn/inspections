@@ -37,5 +37,11 @@ Rails.application.routes.draw do
     post(:customer)
   end
 
+  resource(:dropbox, controller: :dropbox, only: []) do
+    post(:entries)
+    post(:link)
+    post(:folder)
+  end
+
   root(controller: :home, action: :index)
 end

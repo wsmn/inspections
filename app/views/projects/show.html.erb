@@ -1,6 +1,7 @@
 <% content_for(:sidemenu) do %>
   <%= render('panel', active: :show_project, project: @project) %>
 <% end %>
+<%= javascript_pack_tag('dropbox') %>
 
 <%= project_title(@project.status) %>
 <h2 class="subtitle is-3"><%= @project %></h2>
@@ -23,6 +24,11 @@
     <div class="tile is-parent">
       <div class="tile is-child">
         <%= render('images', image: @image, project: @project) %>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <%= react_component('Dropbox', { project: @project.id }) %>
       </div>
     </div>
   </div>

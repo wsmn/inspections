@@ -12,6 +12,7 @@ gem 'bulma-rails', '~> 0.4.2'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'clearance' # Authentication
+gem 'dropbox_api'
 gem 'font-awesome-rails'
 gem 'mini_magick'
 gem 'pg'
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
