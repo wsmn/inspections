@@ -2,6 +2,10 @@ sv:
   home:
     index:
       title: Hem
+      active_projects: Aktiva projekt
+      completed_projects: Avslutade projekt
+      total_project_count: Totalt antal projekt
+      logged_time_entries: Loggade timmar
 
     panel:
       home: Hem
