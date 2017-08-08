@@ -8,7 +8,6 @@ end
 ruby '2.4.1'
 gem 'rails', '~> 5.1.2'
 
-gem 'bulma-rails', '~> 0.4.2'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'clearance' # Authentication
