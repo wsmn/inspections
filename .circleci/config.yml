@@ -16,33 +16,31 @@ jobs:
     steps:
       - checkout
 
-      - type: cache-restore
-        name: Restore bundle cache
-        key: inspections-bundle-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+            - gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-{{ .Branch }}
+            - gem-cache
 
-      - type: cache-restore
-        name: Restore yarn cache
-        key: inspections-yarn-{{ checksum "yarn.lock" }}
+      - run: bundle install --path vendor/bundle
 
-      - run:
-          name: Bundle install
-          command: bin/bundle install --path vendor/bundle
+      - save_cache:
+          key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
-      - run:
-          name: Yarn install
-          command: yarn install
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ .Branch }}
+            - yarn-cache
 
-      - type: cache-save
-        name: Store bundle cache
-        key: inspections-bundle-{{ checksum "Gemfile.lock" }}
-        paths:
-          - ~/vendor/bundle
+      - run: yarn install
 
-      - type: cache-save
-        name: Store yarn cache
-        key: inspections-yarn-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.yarn-cache
+      - save_cache:
+          key: yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
 
       - run:
           name: Wait for DB
