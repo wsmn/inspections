@@ -3,8 +3,11 @@ jobs:
   build:
     working_directory: ~/inspections
     docker:
-      - image: circleci/ruby:2.4.1-node
+      - image: circleci/ruby:2.5.1-node
         environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
           PGHOST: 127.0.0.1
           PGUSER: inspector
           RAILS_ENV: test
@@ -16,15 +19,22 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
       - restore_cache:
           keys:
             - gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
             - gem-cache-{{ .Branch }}
             - gem-cache
 
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
 
       - save_cache:
+          name: Save ruby cache
           key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
