@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to(project_path(@project), notice: t('.success'))
+      redirect_to(project_path(@project), notice: t(".success"))
     else
       render(:new, status: 422)
     end
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to(edit_project_path(@project), notice: t('.success'))
+      redirect_to(edit_project_path(@project), notice: t(".success"))
     else
       render(:edit, status: 422)
     end

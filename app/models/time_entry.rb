@@ -5,6 +5,6 @@ class TimeEntry < ApplicationRecord
   has_many(:projects)
 
   def to_s
-    "#{title}"
+    title.to_s
   end
 end

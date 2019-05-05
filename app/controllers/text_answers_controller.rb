@@ -9,10 +9,10 @@ class TextAnswersController < ApplicationController
     @answer = @entry.build_answer(text_answer_params)
     if save_answer(@answer, @entry)
       redirect_to(project_inspection_path(@inspection.project, @inspection),
-                  notice: 'success')
+        notice: "success")
     else
       redirect_to(project_inspection_path(@inspection.project, @inspection),
-                  notice: 'fail')
+        notice: "fail")
     end
   end
 
@@ -20,7 +20,7 @@ class TextAnswersController < ApplicationController
     load_inspections
     @answer = TextAnswer.find(params[:id])
     @success = @answer.update(text_answer_params)
-    render('/answers/updated')
+    render("/answers/updated")
     # if @answer.update(text_answer_params)
     #   redirect_to(project_inspection_path(@inspection.project, @inspection),
     #               notice: 'success')

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @counts = {
       active: Project.active.count,
       completed: Project.completed.count,
-      total: Project.all.count
+      total: Project.all.count,
     }
   end
 end

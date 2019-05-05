@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :question do
-    question { 'Vad är ...?' }
+    question { "Vad är ...?" }
     kind { Question.kinds.keys.sample }
     description
   end

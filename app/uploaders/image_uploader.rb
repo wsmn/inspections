@@ -3,7 +3,7 @@
 # Handles uploading of images
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  if ENV['AWS']
+  if ENV["AWS"]
     storage(:aws)
   else
     storage :file
@@ -40,8 +40,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   def set_taken_at
     return unless model.respond_to?(:taken_at)
     manipulate! do |img|
-      str = img.exif['DateTime']
-      t = str.present? ? Time.strptime(str, '%Y:%m:%d %H:%M') : Time.current
+      str = img.exif["DateTime"]
+      t = str.present? ? Time.strptime(str, "%Y:%m:%d %H:%M") : Time.current
       model.taken_at = t
       img = yield(img) if block_given?
       img

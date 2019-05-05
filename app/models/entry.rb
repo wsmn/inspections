@@ -24,9 +24,9 @@ class Entry < ApplicationRecord
 
   def new_answer(args)
     case question.kind
-    when 'text'
+    when "text"
       TextAnswer.new(args)
-    when 'bool'
+    when "bool"
       BooleanAnswer.new(args)
     end
   end

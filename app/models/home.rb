@@ -2,8 +2,7 @@
 
 # Questions used for inspections
 class Home < ApplicationRecord
-
   def to_s
-    "#{title}"
+    title.to_s
   end
 end

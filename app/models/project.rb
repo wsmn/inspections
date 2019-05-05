@@ -5,12 +5,12 @@ class Project < ApplicationRecord
   belongs_to(:customer)
   has_many(:inspections)
   has_many(:images)
-  enum(status: { active: 0, paused: 1, completed: 2, cancelled: 3 })
+  enum(status: {active: 0, paused: 1, completed: 2, cancelled: 3})
 
   scope(:text_search, lambda do |str|
-    joins(:customer).fuzzy_search({ title: str,
-                                    customers: { name: str, address: str } },
-                                  false)
+    joins(:customer).fuzzy_search({title: str,
+                                   customers: {name: str, address: str},},
+      false)
   end)
 
   def self.searchable_columns

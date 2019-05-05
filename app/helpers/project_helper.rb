@@ -12,10 +12,10 @@ module ProjectHelper
 
   def project_title(status = nil)
     content = [Project.model_name.human, project_tag(status)]
-    content_tag(:h1, safe_join(content), class: 'title is-1')
+    content_tag(:h1, safe_join(content), class: "title is-1")
   end
 
-  def project_tag(status, size: 'medium', pos: 'is-pulled-right')
+  def project_tag(status, size: "medium", pos: "is-pulled-right")
     return if status.nil?
     cls = "tag #{project_status_class(status)} is-#{size} #{pos}"
     content_tag(:span, project_status(status), class: cls)
@@ -23,14 +23,14 @@ module ProjectHelper
 
   def project_status_class(status)
     case status
-    when 'active'
-      'is-info'
-    when 'paused'
-      'is-warning'
-    when 'completed'
-      'is-success'
-    when 'cancelled'
-      'is-danger'
+    when "active"
+      "is-info"
+    when "paused"
+      "is-warning"
+    when "completed"
+      "is-success"
+    when "cancelled"
+      "is-danger"
     end
   end
 end

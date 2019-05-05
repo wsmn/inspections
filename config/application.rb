@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -27,12 +27,12 @@ module Inspections
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom
-    config.time_zone = 'Stockholm'
+    config.time_zone = "Stockholm"
 
-    config.i18n.load_path += Dir[Rails.root.join('config',
-                                                 'locales',
-                                                 '**',
-                                                 '*.{rb,yml}')]
+    config.i18n.load_path += Dir[Rails.root.join("config",
+      "locales",
+      "**",
+      "*.{rb,yml}")]
     config.i18n.default_locale = :sv
 
     config.generators do |g|
@@ -49,6 +49,6 @@ module Inspections
       g.routing_specs false
     end
 
-    config.x.app_url = ENV.fetch('APP_URL') { 'kontrollansvarig.se' }
+    config.x.app_url = ENV.fetch("APP_URL") { "kontrollansvarig.se" }
   end
 end

@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
 
   def project
     @projects = Project.includes(:customer)
-                       .text_search(search_param)
+      .text_search(search_param)
   end
 
   def customer
@@ -15,6 +15,6 @@ class SearchesController < ApplicationController
   private
 
   def search_param
-    params.require(:search).fetch(:text, '')
+    params.require(:search).fetch(:text, "")
   end
 end

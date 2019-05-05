@@ -23,8 +23,8 @@ class InspectionsController < ApplicationController
     @project = Project.find(params[:project_id])
     @inspection = @project.inspections.find(params[:id])
     @entries = @inspection.entries
-                          .includes(:question, :answer)
-                          .order(:id)
+      .includes(:question, :answer)
+      .order(:id)
     @entry = @inspection.entries.build
   end
 
@@ -33,7 +33,7 @@ class InspectionsController < ApplicationController
     @inspection = @project.inspections.build(inspection_params)
     if @inspection.save
       redirect_to(project_inspection_path(@project, @inspection),
-                  notice: t('.success'))
+        notice: t(".success"))
     else
       render(:new, status: 422)
     end
@@ -43,7 +43,7 @@ class InspectionsController < ApplicationController
     project = Project.find(params[:project_id])
     project.inspections.find(params[:id]).destroy!
 
-    redirect_to(project_inspections_path(project), notice: t('.success'))
+    redirect_to(project_inspections_path(project), notice: t(".success"))
   end
 
   private

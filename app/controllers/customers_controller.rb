@@ -9,13 +9,13 @@ class CustomersController < ApplicationController
 
   def destroy
     Customer.find(params[:id]).destroy!
-    redirect_to(customers_path, notice: t('.success'))
+    redirect_to(customers_path, notice: t(".success"))
   end
 
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to(customer_path(@customer), notice: t('.success'))
+      redirect_to(customer_path(@customer), notice: t(".success"))
     else
       render(:new, status: 422)
     end
@@ -36,7 +36,7 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to(customer_path(@customer), notice: t('.success'))
+      redirect_to(customer_path(@customer), notice: t(".success"))
     else
       render(:edit, status: 422)
     end

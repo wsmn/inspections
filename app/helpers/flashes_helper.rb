@@ -4,17 +4,17 @@ module FlashesHelper
   end
 
   def bulma_notification(flash)
-    case(flash)
-    when('alert')
-      'warning'
-    when('error')
-      'danger'
-    when('notice')
-      'info'
-    when 'success'
-      'success'
+    case flash
+    when "alert"
+      "warning"
+    when "error"
+      "danger"
+    when "notice"
+      "info"
+    when "success"
+      "success"
     else
-      'primary'
+      "primary"
     end
   end
 end

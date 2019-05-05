@@ -7,7 +7,7 @@ class Inspection < ApplicationRecord
   validates(:at_date, presence: true)
 
   scope(:by_date, -> { order(:at_date) })
-  scope(:upcoming, -> { by_date.where('at_date >= :time', time: Time.current) })
+  scope(:upcoming, -> { by_date.where("at_date >= :time", time: Time.current) })
 
   def to_s
     I18n.l(at_date)

@@ -4,7 +4,7 @@
 FactoryBot.define do
   factory(:user) do
     email
-    password { 'passpass' }
+    password { "passpass" }
     role { User.roles.keys.sample }
     name
   end
