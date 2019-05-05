@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.5.1'
-gem 'rails', '~> 5.1.3'
+ruby '2.6.3'
+gem 'rails', '~> 5.1'
 
 gem 'carrierwave'
 gem 'carrierwave-aws'
@@ -30,7 +30,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'selenium-webdriver'

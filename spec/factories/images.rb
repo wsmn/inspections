@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :image do
     project
     file { generate(:image_file) }

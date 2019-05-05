@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   sequence(:title) { |n| "#{['Titel', 'Rubrik', 'En titel'].sample} #{n}" }
   sequence(:name) { |n| "#{%w[David Arthur Annika].sample} #{n}" }
   sequence(:phone) { |n| "#{%w[07011111 07022222].sample}#{n}" }

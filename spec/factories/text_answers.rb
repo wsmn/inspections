@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :text_answer do
-    answer "MyText"
+    answer { "MyText" }
   end
 end
