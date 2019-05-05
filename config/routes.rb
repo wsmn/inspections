@@ -14,7 +14,6 @@ Rails.application.routes.draw do
                     path: "sign-out")
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
 
-  resources(:home)
   resources(:customers)
   resources(:time_entries, only: %i[index new])
   resources(:projects) do
@@ -37,5 +36,5 @@ Rails.application.routes.draw do
     post(:customer)
   end
 
-  root(controller: :home, action: :index)
+  root(controller: :presentation, action: :index)
 end

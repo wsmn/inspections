@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controller for landing page
-class HomeController < ApplicationController
+class PresentationController < ApplicationController
   def index
     @counts = {
       active: Project.active.count,

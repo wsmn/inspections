@@ -4,7 +4,7 @@
       <%= link_to(root_path,
                   class: aside_item_class(['home'])) do %>
         <%= icon('fas', 'home') %>
-        <%= Home.model_name.human(count: 2) %>
+        <%= t('.home') %>
       <% end %>
     </li>
     <li>
@@ -31,23 +31,4 @@
   </ul>
   <%= yield(:sidemenu) %>
 
-  <p class="menu-label">Användare</p>
-  <ul class="menu-list">
-    <% if signed_in? %>
-      <li><%= current_user.email %></li>
-      <li>
-        <%= link_to(sign_out_path, method: :delete) do %>
-          <%= icon('fas', 'user') %>
-          <%= t('.sign_out') %>
-        <% end %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to(sign_in_path) do %>
-          <%= icon('fas', 'user') %>
-          <%= t('.sign_in') %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
 </aside>
