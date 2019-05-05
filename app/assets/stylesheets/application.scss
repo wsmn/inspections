@@ -1,12 +1,7 @@
-@import 'font-awesome';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import 'bulma_customise';
 @import 'bulma/bulma';
 @import 'forms';
 @import 'customer';
 @import 'menu';
-
-.fa {
-  font-size: inherit;
-  margin-right: .1rem;
-  vertical-align: middle;
-}

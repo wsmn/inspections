@@ -3,28 +3,28 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(projects_path(status: :active), active, 'active') do %>
-    <%= fa_icon('play') %>
+    <%= icon('fas', 'play') %>
     <%= t('models.project.status.active') %>
   <% end %>
 
   <%= active_menu(projects_path(status: :paused), active, 'paused') do %>
-    <%= fa_icon('pause') %>
+    <%= icon('fas', 'pause') %>
     <%= t('models.project.status.paused') %>
   <% end %>
 
   <%= active_menu(projects_path(status: :completed), active, 'completed') do %>
-    <%= fa_icon('check') %>
+    <%= icon('fas', 'check') %>
     <%= t('models.project.status.completed') %>
   <% end %>
 
   <%= active_menu(projects_path(status: :cancelled), active, 'cancelled') do %>
-    <%= fa_icon('stop') %>
+    <%= icon('fas', 'stop') %>
     <%= t('models.project.status.cancelled') %>
   <% end %>
 
   <% if active.present? %>
     <%= active_menu(projects_path, active, 'skip') do %>
-      <%= fa_icon('ban') %>
+      <%= icon('fas', 'ban') %>
       <%= t('.unfiltered') %>
     <% end %>
   <% end %>

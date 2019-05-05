@@ -10,7 +10,7 @@ gem "rails", "~> 5.2"
 
 gem "bootsnap"
 gem "clearance" # Authentication
-gem "font-awesome-rails"
+gem "font-awesome-sass"
 gem "mini_magick"
 gem "pg"
 gem "puma", "~> 3.7"
