@@ -8,6 +8,7 @@ end
 ruby "2.6.3"
 gem "rails", "~> 5.2"
 
+gem "bootsnap"
 gem "clearance" # Authentication
 gem "font-awesome-rails"
 gem "mini_magick"
@@ -30,7 +31,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "bootsnap"
   gem "foreman"
   gem "standardrb"
 end
