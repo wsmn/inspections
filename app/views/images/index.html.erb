@@ -18,7 +18,7 @@
       <tr>
         <td>
           <%= link_to(edit_project_image_path(@project, image)) do %>
-            <%= image_tag(image.thumb, class: 'image is-96x96') %>
+            <%= image_tag(image.file, class: 'image is-96x96') %>
           <% end %>
         </td>
         <td>
