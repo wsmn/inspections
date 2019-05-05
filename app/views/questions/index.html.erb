@@ -19,7 +19,7 @@
           <tr>
             <td> <%= link_to(q.question, edit_question_path(q)) %> </td>
             <td> <%= question_kind(q.kind) %> </td>
-            <td> <%= link_to(fa_icon('wrench'), edit_question_path(q)) %> </td>
+            <td> <%= link_to(icon('fas', 'wrench'), edit_question_path(q)) %> </td>
           </tr>
         <% end %>
       </tbody>

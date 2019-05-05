@@ -3,7 +3,7 @@
     <p class="card-header-title">
       <%= Customer.model_name.human %>
     </p>
-    <%= link_to(fa_icon('wrench'), edit_customer_path(customer),
+    <%= link_to(icon('fas', 'wrench'), edit_customer_path(customer),
                                    class: 'card-header-icon') %>
   </header>
   <div class="card-content">
@@ -11,10 +11,10 @@
       <div class="media-content">
         <p class="title is-4"><%= customer.name %></p>
         <ul>
-          <li><%= fa_icon('phone', text: customer.phone) %></li>
-          <li><%= fa_icon('home', text: customer.address) %></li>
-          <li><%= fa_icon('envelope', text: customer.email) %></li>
-          <li><%= fa_icon('hashtag', text: t('.project_id', id: customer.id)) %></li>
+          <li><%= icon('fas', 'phone', text: customer.phone) %></li>
+          <li><%= icon('fas', 'home', text: customer.address) %></li>
+          <li><%= icon('fas', 'envelope', text: customer.email) %></li>
+          <li><%= icon('fas', 'hashtag', text: t('.project_id', id: customer.id)) %></li>
         </ul>
       </div>
     </div>

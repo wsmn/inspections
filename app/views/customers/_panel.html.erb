@@ -5,20 +5,20 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(customers_path, active, :index) do %>
-    <%= fa_icon('list') %>
+    <%= icon('fas', 'list') %>
     <%= t('.all_customers') %>
   <% end %>
   <%= active_menu(new_customer_path, active, :new) do %>
-    <%= fa_icon('plus') %>
+    <%= icon('fas', 'plus') %>
     <%= t('.new_customer') %>
   <% end %>
   <% if customer.present? %>
     <%= active_menu(customer_path(customer), active, :show) do %>
-      <%= fa_icon('address-card-o') %>
+      <%= icon('fas', 'address-card-o') %>
       <%= t('.show_customer') %>
     <% end %>
     <%= active_menu(edit_customer_path(customer), active, :edit) do %>
-      <%= fa_icon('wrench') %>
+      <%= icon('fas', 'wrench') %>
       <%= t('.edit_customer') %>
     <% end %>
   <% end %>

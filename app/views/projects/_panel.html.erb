@@ -6,12 +6,12 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(projects_path, active, :index) do %>
-    <%= fa_icon('list') %>
+    <%= icon('fas', 'list') %>
     <%= t('.all_projects') %>
   <% end %>
 
   <%= active_menu(new_project_path, active, :new) do %>
-    <%= fa_icon('plus-square') %>
+    <%= icon('fas', 'plus-square') %>
     <%= t('.new') %>
   <% end %>
 </ul>

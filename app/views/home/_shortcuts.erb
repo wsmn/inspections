@@ -3,17 +3,17 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(new_project_path, active, :new) do %>
-    <%= fa_icon('plus-square') %>
+    <%= icon('fas', 'plus-square') %>
     <%= t('.create_new_project') %>
   <% end %>
 
   <%= active_menu(new_customer_path, active, :new) do %>
-    <%= fa_icon('plus-square-o') %>
+    <%= icon('fas', 'plus-square-o') %>
     <%= t('.add_new_customer') %>
   <% end %>
 
   <%= active_menu(new_time_entry_path, active, :new) do %>
-    <%= fa_icon('plus-square') %>
+    <%= icon('fas', 'plus-square') %>
     <%= t('.new_time_entry') %>
   <% end %>
 

@@ -1,11 +1,11 @@
 <ul class="menu-list">
   <%= active_menu(project_path(project), active, :show_project) do %>
-    <%= fa_icon('clone') %>
+    <%= icon('fas', 'clone') %>
     <%= t('.show_project') %>
   <% end %>
 
   <%= active_menu(edit_project_path(project), active, :edit) do %>
-    <%= fa_icon('wrench') %>
+    <%= icon('fas', 'wrench') %>
     <%= t('.edit_project') %>
   <% end %>
 </ul>
@@ -15,12 +15,12 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(project_inspections_path(project), active, :index_inspections) do %>
-    <%= fa_icon('files-o') %>
+    <%= icon('fas', 'files-o') %>
     <%= t('.all_inspections') %>
   <% end %>
 
   <%= active_menu(new_project_inspection_path(project), active, :new_project) do %>
-    <%= fa_icon('plus-square') %>
+    <%= icon('fas', 'plus-square') %>
     <%= t('.new_inspection') %>
   <% end %>
 </ul>
@@ -30,12 +30,12 @@
 </p>
 <ul class="menu-list">
   <%= active_menu(project_images_path(project), active, :index_images) do %>
-    <%= fa_icon('picture-o') %>
+    <%= icon('fas', 'picture-o') %>
     <%= t('.all_images') %>
   <% end %>
 
   <%= active_menu(new_project_image_path(project), active, :new_image) do %>
-    <%= fa_icon('camera') %>
+    <%= icon('fas', 'camera') %>
     <%= t('.new_image') %>
   <% end %>
 </ul>
