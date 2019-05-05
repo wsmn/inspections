@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @images = @project.images.taken_at
+    @images = @project.images
   end
 
   def new

@@ -8,8 +8,6 @@ end
 ruby "2.6.3"
 gem "rails", "~> 5.2"
 
-gem "carrierwave"
-gem "carrierwave-aws"
 gem "clearance" # Authentication
 gem "font-awesome-rails"
 gem "mini_magick"
