@@ -1,5 +1,3 @@
-// A simple counter example
-// The setup will be more complicated in modern apps built using React
 
 
 const menuToggle = {

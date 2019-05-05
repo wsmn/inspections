@@ -1,24 +1,13 @@
-# README
+# Kontrollansvarig - a search index for inspectors!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
+The application is written in Ruby on Rails, download the repository and get started!
 
-Things you may want to cover:
+- Install `Ruby 2.6` ([rbenv](https://github.com/rbenv/rbenv#groom-your-apps-ruby-environment-with-rbenv))
+- Install [`Postgres`](https://www.postgresql.org/download/)
+- Install [`yarn`](https://yarnpkg.com/en/docs/install)
+- Install [`bundler`](https://bundler.io)
+- Run `bin/setup` inside this repository.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Status
+[![CircleCI](https://circleci.com/gh/davidwessman/inspections/tree/master.svg?style=shield)](https://circleci.com/gh/davidwessman/inspections/tree/master)
