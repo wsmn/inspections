@@ -20,11 +20,10 @@
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
-/yarn-error.log
-
-.byebug_history
-/node_modules
+/public/images
 /public/packs
 /public/packs-test
-/public/images
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
