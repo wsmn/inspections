@@ -1,47 +1,69 @@
-<nav class="navbar justify-between">
-  <div class="navbar-brand">
-    <%= link_to(root_path, class: 'navbar-item') do %>
-      <%= image_tag('ka.svg', style: 'width: 8rem;') %>
-    <% end %>
-  </div>
-  <div class="flex align-middle">
-    <div class="navbar-burger burger" data-target="navMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="align-middle">
-      <% if signed_in? %>
-        <%= link_to(sign_out_path, method: :delete, class: 'button') do %>
-          <%= icon('fas', 'user') %>
-          <%= t('.sign_out') %>
-        <% end %>
-      <% else %>
-        <%= link_to(sign_in_path) do %>
-          <%= icon('fas', 'user') %>
-          <%= t('.sign_in') %>
-        <% end %>
+<nav class="navbar">
+  <div class="flex justify-center w-full">
+    <div class="flex">
+      <%= link_to(root_path, class: 'flex items-center p-5') do%>
+        <%= image_tag('ka.svg', style: 'width: 12rem;') %>
       <% end %>
+    </div>
+    <div class="absolute right-0">
+      <div class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="align-middle p-3 is-hidden-touch">
+        <% if signed_in? %>
+          <%= link_to(account_path, class: 'button bg-blue-100') do %>
+            <%= icon('fas', 'user', class: 'mr-1') %>
+            <%= t('.account') %>
+          <% end %>
+          <%= link_to(sign_out_path, method: :delete, class: 'button') do %>
+            <%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
+            <%= t('.sign_out') %>
+          <% end %>
+        <% else %>
+          <%= link_to(sign_in_path, class: 'button') do %>
+            <%= icon('fas', 'user', class: 'mr-1') %>
+            <%= t('.sign_in') %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <div id="navMenu" class="navbar-menu is-hidden-desktop">
     <div class="navbar-start">
       <%= link_to(t('.home'),
-                  root_path,
-                  class: navbar_is_active('navbar-item is-tab', 'home')) %>
+                root_path,
+                class: navbar_is_active('navbar-item is-tab', 'home')) %>
       <%= link_to(Project.model_name.human(count: 2),
-                  projects_path,
-                  class: navbar_is_active('navbar-item is-tab', 'projects')) %>
+                projects_path,
+                class: navbar_is_active('navbar-item is-tab', 'projects')) %>
       <div class="navbar-item has-dropdown is-hoverable">
         <%= link_to(Customer.model_name.human(count: 2),
-                    customers_path,
-                    class: navbar_is_active('navbar-item is-tab', 'customers')) %>
+                  customers_path,
+                  class: navbar_is_active('navbar-item is-tab', 'customers')) %>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
         <%= link_to(TimeEntry.model_name.human(count: 2),
-                    time_entries_path,
-                    class: navbar_is_active('navbar-item is-tab', 'time_entries')) %>
+                  time_entries_path,
+                  class: navbar_is_active('navbar-item is-tab', 'time_entries')) %>
       </div>
+      <% if signed_in? %>
+        <%= link_to(account_path, class: 'navbar-item is-tab') do %>
+          <%= icon('fas', 'user', class: 'mr-1') %>
+          <%= t('.account') %>
+        <% end %>
+        <%= link_to(sign_out_path, method: :delete, class: 'navbar-item is-tab') do %>
+          <%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
+          <%= t('.sign_out') %>
+        <% end %>
+      <% else %>
+        <%= link_to(sign_in_path, class: 'navbar-item is-tab') do %>
+          <%= icon('fas', 'user', class: 'mr-1') %>
+          <%= t('.sign_in') %>
+        <% end %>
+      <% end %>
     </div>
+  </div>
 </nav>

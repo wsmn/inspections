@@ -1,5 +1,7 @@
 sv:
   presentation:
+    account:
+      title: Konto
     index:
       title: Hem
       active_projects: Aktiva projekt
