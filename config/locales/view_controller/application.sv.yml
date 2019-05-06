@@ -1,6 +1,8 @@
 sv:
   application:
     header:
-      home: Hem
+      account: Konto
+      sign_in: Logga in
+      sign_out: Logga ut
     sidemenu:
       home: Hem

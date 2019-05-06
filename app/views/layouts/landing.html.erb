@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrollansvarig</title>
+    <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
+    <%= javascript_include_tag('application', 'data-turbolinks-track': 'reload') %>
+    <%= javascript_pack_tag('application') %>
+    <%= stylesheet_pack_tag('application') %>
+    <%= csrf_meta_tags %>
+    <%= render 'application/favicon' %>
+  </head>
+  <body>
+    <header>
+      <%= render 'header' %>
+    </header>
+    <div class="columns">
+      <div class="column">
+        <section class="section">
+          <%= yield %>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+

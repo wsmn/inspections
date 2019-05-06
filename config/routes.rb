@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete(:sign_out, controller: "clearance/sessions", action: :destroy,
                     path: "sign-out")
   get(:sign_up, controller: "clearance/users", action: :new, path: "sign-up")
+  get(:account, controller: :presentation, action: :account)
 
   resources(:customers)
   resources(:time_entries, only: %i[index new])

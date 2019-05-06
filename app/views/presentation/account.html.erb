@@ -1,0 +1,36 @@
+<% content_for(:sidemenu) do %>
+  <%= render('panel', active: :index) %>
+  <%= render('shortcuts', active: @status) %>
+<% end %>
+
+<h1 class="title is-1"><%= t('.title') %></h1>
+<div class="columns">
+  <div class="column">
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading"><%= t('.active_projects') %></p>
+          <p class="title"><%= @counts[:active] %></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading"><%= t('.completed_projects') %></p>
+          <p class="title"><%= @counts[:completed] %></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading"><%= t('.total_project_count') %></p>
+          <p class="title"><%= @counts[:total] %></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading"><%= t('.logged_time_entries') %></p>
+          <p class="title">789</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
