@@ -37,5 +37,6 @@ Rails.application.routes.draw do
     post(:customer)
   end
 
+  get(:about, controller: :presentation, action: :about)
   root(controller: :presentation, action: :index)
 end

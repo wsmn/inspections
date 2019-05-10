@@ -6,6 +6,10 @@ class PresentationController < ApplicationController
     render(layout: 'landing')
   end
 
+  def about 
+    render(layout: 'landing')
+  end
+
   def account
     @counts = {
       active: Project.active.count,
@@ -13,4 +17,5 @@ class PresentationController < ApplicationController
       total: Project.all.count,
     }
   end
+
 end
