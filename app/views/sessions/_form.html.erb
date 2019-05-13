@@ -1,12 +1,23 @@
 <%= simple_form_for(:session, url: session_path) do |form| %>
-  <%= form.input(:email, as: 'email', input_html: { autofocus: true }) %>
-  <%= form.input(:password) %>
-  <%= bulma_button(form, text: 'Logga in') %>
-
+  <div class="box">
+    <%= form.input(:email, as: 'email', input_html: { autofocus: true }) %>
+    <%= form.input(:password) %>
+    <div class="field">
+      <label class="checkbox">
+        <input type="checkbox">
+          <%= t('.remember') %>
+      </label>
+        <div class="column is-fullwidth">
+          <%= bulma_button(form, text: 'Logga in') %>          
+      </div>
+    </div>
+  </div>
   <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <p class="has-text-grey">
+      <% if Clearance.configuration.allow_sign_up? %>
+        <%= link_to t(".sign_up"), sign_up_path %>
+      <% end %>
+      <%= link_to t(".forgot_password"), new_password_path %>      
+    </p>
   </div>
 <% end %>

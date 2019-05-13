@@ -1,73 +1,47 @@
-<section class="hero is-dark is-medium">
-  <div class="hero-body is-full">
-    <div class="container" style="margin-bottom:-30px;">
-      <div class="columns">
-        <div class="column is-6 is-paddingless">
-          <div style="height:70px;">
-          </div>              
-          <h1 class="text-5xl font-bold">
-            Hitta Kontrollansvariga
-          </h1>
-          <div class="column is-9 is-paddingless">
-            <p class="is-size-5 has-text-grey-white">Hitta kontrollansvariga nära dig idag. Beskriv ert projekt nedan och hitta företag med rätt expertis för just ert projekt.</p><br/>
-          </div>
-          <div class="column is-7 is-paddingless">
-            <div class="dropdown">
-              <div class="dropdown-trigger">
-              <p class="is-size-6 has-text-grey-light">Typ av projekt:</p>
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>Nybyggnation</span>
-                  <span class="icon is-small">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                  <a class="dropdown-item">
-                    Dropdown item
-                  </a>
-                  <a class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <a class="dropdown-item is-active">
-                    Active dropdown item
-                  </a>
-                  <a class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <hr class="dropdown-divider">
-                  <a class="dropdown-item">
-                    With a divider
-                  </a>
+<!--Bulma -->
+<section class="hero is-info is-fullheight header-image">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="is-hidden-mobile" style="height:150px;">
+        <!--Empty div-->
+      </div>    
+      <div class="column is-6 is-offset-3">
+        <h1 class="is-size-1-widescreen is-size-2-touch is-size-2 font-bold">
+          Hitta Kontrollansvariga
+        </h1><br><br>
+        <h2 class="subtitle">
+          Hitta kontrollansvariga nära dig idag. Beskriv ert projekt nedan och hitta företag med rätt expertis för just ert projekt.    
+        </h2><br><br>
+        <div class="column is-10 is-offset-1">
+          <div class="box">
+            <div class="field is-grouped has-addons">
+              <div class="control is-expanded">
+                <div class="select is-fullwidth">
+                  <select name="projectType">
+                    <option value="Nybyggnation">Nybyggnation</option>
+                    <option value="Renovering">Renovering</option>
+                    <option value="Utbyggnad">Utbyggnad</option>
+                    <option value="Industri">Industri</option>
+                  </select>
                 </div>
               </div>
-            </div>
-          </div>             
-          <br/> 
-          <div class="column is-7 is-paddingless">
-            <p class="is-size-6 has-text-grey-light">Adress eller postnummer:</p>          
-            <p class="control is-dark has-icons-left">
-              <input class="input" type="text" placeholder="Search">
-              <span class="icon is-small is-left">
-                <i class="fas fa-search" aria-hidden="true"></i>
-              </span>
-            </p>
-          </div>      
-        </div>     
-        <div class="column is-8">
-          <figure class="image">
-            <%= image_tag('maps.png', style: 'height:auto;width:90%;') %>
-          </figure>
-        </div>
-      </div> 
-    </div>
-   </div>
-</section>
-
-
-<section class="hero is-dark is-small">
-  <div class="hero-body">
+            </div>        
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+                <input class="input" type="text" placeholder="Adress eller postnummer">
+              </p>
+              <p class="control">
+                <a class="button is-info">
+                  Sök
+                </a>
+              </p>
+            </div>        
+          </div>
+          <div class="is-hidden-mobile" style="height:300px;">
+          <!--Empty div-->
+          </div>           
+        </div> 
+      </div>
     <div class="container">    
       <div class="columns is-multiline is-mobile is-marginless">
         <div class="column">
@@ -122,9 +96,14 @@
             <!--Placeholder column -->
           </div>
         </div>    
-      </div>  
+      </div>    
+                <div class="is-hidden-mobile" style="height:200px;">
+          <!--Empty div-->
+          </div>           
     </div>
+  </div>
 </section>
+
 
 <footer class="footer">
 <section class="section">
@@ -242,6 +221,9 @@
     </p>
   </div>
 </footer>
+
+
+
 
 
 

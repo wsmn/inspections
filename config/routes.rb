@@ -38,5 +38,8 @@ Rails.application.routes.draw do
   end
 
   get(:about, controller: :presentation, action: :about)
+  get(:contact, controller: :presentation, action: :contact)
+  get(:kontrollansvarig, controller: :presentation, action: :kontrollansvarig)
+  get(:map, controller: :presentation, action: :map)
   root(controller: :presentation, action: :index)
 end

@@ -43,10 +43,12 @@ sv:
       title: Återställ lösenord
   sessions:
     form:
+      remember: Kom ihåg mig
       forgot_password: Glömt lösenord?
       sign_up: Skapa konto
     new:
       title: Logga in
+      subtitle: Vänligen logga in för att fortsätta.      
   users:
     new:
       sign_in: Logga in

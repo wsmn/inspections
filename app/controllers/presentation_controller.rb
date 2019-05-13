@@ -10,6 +10,18 @@ class PresentationController < ApplicationController
     render(layout: 'landing')
   end
 
+  def contact 
+    render(layout: 'landing')
+  end
+
+  def kontrollansvarig 
+    render(layout: 'landing')
+  end
+
+  def map 
+    render(layout: 'landing')
+  end
+
   def account
     @counts = {
       active: Project.active.count,

@@ -24,8 +24,8 @@
             <% end %>
           <% else %>
             <%= link_to(sign_in_path, class: 'button') do %>
-              <%= icon('fas', 'user', class: 'mr-1') %>
               <%= t('.sign_in') %>
+              <%= icon('fas', 'user', class: 'ml-1') %>              
             <% end %>
           <% end %>
         </div>
@@ -37,9 +37,24 @@
           <%= link_to(t('.home'),
                     root_path,
                     class: navbar_is_active('navbar-item is-tab', 'home')) %>
+          <%= link_to(t('.map'),
+                    map_path,
+                    class: navbar_is_active('navbar-item is-tab', 'map')) %>                                                                                      
+          <%= link_to(t('.kontrollansvarig'),
+                    kontrollansvarig_path,
+                    class: navbar_is_active('navbar-item is-tab', 'kontrollansvarig')) %>                                                                                  
           <%= link_to(t('.about'),
                     about_path,
-                    class: navbar_is_active('navbar-item is-tab', 'about')) %>                    
+                    class: navbar_is_active('navbar-item is-tab', 'about')) %>
+          <%= link_to(t('.contact'),
+                    contact_path,
+                    class: navbar_is_active('navbar-item is-tab', 'contact')) %>
+          </div>                     
+          <% if signed_in? %>
+            <%= link_to(account_path, class: 'navbar-item is-tab') do %>
+              <%= icon('fas', 'user', class: 'mr-1') %>
+              <%= t('.account') %>
+            <% end %>
           <%= link_to(Project.model_name.human(count: 2),
                     projects_path,
                     class: navbar_is_active('navbar-item is-tab', 'projects')) %>
@@ -51,13 +66,7 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to(TimeEntry.model_name.human(count: 2),
                       time_entries_path,
-                      class: navbar_is_active('navbar-item is-tab', 'time_entries')) %>
-          </div>
-          <% if signed_in? %>
-            <%= link_to(account_path, class: 'navbar-item is-tab') do %>
-              <%= icon('fas', 'user', class: 'mr-1') %>
-              <%= t('.account') %>
-            <% end %>
+                      class: navbar_is_active('navbar-item is-tab', 'time_entries')) %>            
             <%= link_to(sign_out_path, method: :delete, class: 'navbar-item is-tab') do %>
               <%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
               <%= t('.sign_out') %>

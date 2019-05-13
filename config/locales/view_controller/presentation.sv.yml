@@ -9,6 +9,18 @@ sv:
       total_project_count: Totalt antal projekt
       logged_time_entries: Loggade timmar
 
+    about:
+      about: Om oss 
+
+    contact:
+      contact: Kontakt
+
+    kontrollansvarig:
+      ka-title: Kontrollansvarig
+      ka-subtitle: Allt du behöver veta  
+      ka-subtitle2: för ditt projekt. 
+      general: Allmänt
+
     panel:
       home: Hem
 
