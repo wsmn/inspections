@@ -1,6 +1,11 @@
 sv:
   application:
     header:
+      home: Hem
+      map: Karta
+      about: Om oss
+      contact: Kontakt
+      connect: Anslut företag
       account: Konto
       sign_in: Logga in
       sign_out: Logga ut

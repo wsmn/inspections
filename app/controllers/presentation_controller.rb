@@ -22,6 +22,10 @@ class PresentationController < ApplicationController
     render(layout: 'landing')
   end
 
+  def connect 
+    render(layout: 'landing')
+  end
+
   def account
     @counts = {
       active: Project.active.count,
