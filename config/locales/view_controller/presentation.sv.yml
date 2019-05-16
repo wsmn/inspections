@@ -15,6 +15,16 @@ sv:
     contact:
       contact: Kontakt
 
+    connect:
+      connect: Kontakt
+      company_name: Företagsnamn
+      contact_person: Kontaktperson
+      email: E-mail
+      phone: Telefon   
+      message: Meddelande
+      submit: Skicka
+      message_text: Text          
+
     kontrollansvarig:
       ka-title: Kontrollansvarig
       ka-subtitle: Allt du behöver veta  

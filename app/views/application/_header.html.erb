@@ -28,16 +28,13 @@
           <%= link_to(t('.about'),
                     about_path,
                     class: navbar_is_active('navbar-item is-tab', 'about')) %>
-          <%= link_to(t('.contact'),
-                    contact_path,
-                    class: navbar_is_active('navbar-item is-tab', 'contact')) %>
           <%= link_to(t('.connect'),
                     connect_path,
                     class: navbar_is_active('navbar-item is-tab', 'connect')) %>
           <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+          <%= link_to(t('.contact'),
+                    contact_path,
+                    class: navbar_is_active('navbar-item is-tab', 'contact')) %>
         </div>
       </div>
       <% if signed_in? %>

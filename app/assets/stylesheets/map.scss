@@ -16,3 +16,14 @@
     background-size: cover;
     background-color: #999;
 }
+
+.connect-image {
+  background: url(asset_path("connect2.jpg"));
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+ul li { padding: 5px 0px; }
