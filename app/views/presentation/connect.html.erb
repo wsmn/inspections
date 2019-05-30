@@ -1,99 +1,86 @@
-<!--Bulma-->
-<section class="hero is-info is-fullheight connect-image">
-    <div class="hero-body">
-        <div class="container">
-            <div class="is-hidden-desktop" style="height:50px;">
-                <!--Empty div-->
-            </div>        
-            <div class="is-hidden-touch" style="height:150px;">
-                <!--Empty div-->
-            </div>    
-            <div class="columns is-multiline is-tablet">
-                <div class="column is-6 is-12-mobile">
-                    <h1 class="is-size-1-widescreen is-size-3-touch is-size-2 font-bold">
-                        Anslut ditt företag!
-                    </h1>
-                    <br/>
-                    <div class="column is-10">
-                        <p class="is-size-5 has-text-grey-white font-semibold">
-                        Är du certifierad kontrollansvarig och vill synas här? Vänta inte! Kontakta oss idag och få fler jobbmöjligheter i din närhet!
-                        </p><br/><br/>
-                    </div>
-                    <div class="column is-8 is-12-tablet">
-                        <div class="content is-size-5">
-                            <ul>
-                                <li>Kopplar ihop kunder och företag.</li>
-                                <li>Interaktiv karta, sortera på typ av projekt aktiva inaktiva.</li>
-                                <li>Standardiserade mallar som underlättar kund/företag kontakten.</li>
-                            </ul>
-                        </div>    
-                    </div>                
-                </div>     
-                <div class="column is-6">
-                    <div class="column is-12-mobile is-9-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop">
-                        <div class="box">
-                            <div class="field">
-                                <label class="label"><%= t('.company_name') %></label>
-                                <div class="control has-icons-left">
-                                    <input class="input is-medium" type="text">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-building"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label"><%= t('.contact_person') %></label>
-                                <div class="control has-icons-left">
-                                    <input class="input is-medium" type="text">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
-                            </div>                        
-
-                            <div class="field">
-                                <label class="label"><%= t('.email') %></label>
-                                <div class="control has-icons-left">
-                                    <input class="input is-medium" type="email">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label"><%= t('.phone') %></label>
-                                <div class="control has-icons-left">
-                                    <input class="input is-medium" type="email">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-phone"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label"><%= t('.message') %></label>
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="<%= t('.message_text') %>"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <div class="control">
-                                    <button class="button is-info is-large is-fullwidth disabled" disabled><%= t('.submit') %></button>
-                                </div>
-                            </div>     
-                        </div>
-                    </div>    
-                </div>
-            </div> 
-            <div class="is-hidden-desktop" style="height:50px;">
-                <!--Empty div-->
-            </div>        
-            <div class="is-hidden-touch" style="height:350px;">
-                <!--Empty div-->
-            </div>    
+<div class="container sm:mx-auto xl:mx-auto mt-12 md:mt-16 lg:mt-24 xl:mt-40 h-screen">
+  <div class="flex flex-wrap">
+    <div class="w-full xl:w-2/4">
+      <div class="w-full mx-auto xl:mx-0 xl:w-5/6">
+        <div class="w-10/12 lg:w-8/12 xl:w-full mx-auto xl:mx-0">
+          <h1 class="text-3xl md:text-5xl font-sans font-bold text-blue-900">
+            Anslut ditt företag!
+          </h1><br>
+          <p class="font-medium text-lg text-gray-700">
+            Hitta kontrollansvariga nära dig idag. Beskriv ert projekt nedan och hitta företag med rätt expertis för just ert projekt.    
+          </p>
+        </div>          
+      </div>
+      <div class="w-5/6 lg:w-8/12 xl:w-5/6 mx-auto xl:mx-0 mt-8 xl:mt-12">
+        <div class="content text-lg">
+            <ul>
+                <li>Kopplar ihop kunder och företag.</li>
+                <li>Interaktiv karta, sortera på typ av projekt aktiva inaktiva.</li>
+                <li>Standardiserade mallar som underlättar kund/företag kontakten.</li>
+            </ul>
         </div>
+        <div class="w-4/5 lg:w-8/12 xl:w-2/3 mx-auto sm:mt-8 md:mt-12">
+          <%= image_tag('connect.svg')%>    
+        </div>            
+      </div>        
     </div>
-</section>
+    <div class="w-5/6 xl:w-2/4 mx-auto">
+      <div class="w-full md:w-3/4 mx-auto mb-24 sm:mt-20 lg:mt-8">     
+        <div class="box">
+          <div class="field">
+            <label class="label"><%= t('.company_name') %></label>
+            <div class="control has-icons-left">
+                <input class="input is-medium" type="text">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-building"></i>
+                </span>
+            </div>
+          </div>
+
+          <div class="field">
+              <label class="label"><%= t('.contact_person') %></label>
+              <div class="control has-icons-left">
+                  <input class="input is-medium" type="text">
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                  </span>
+              </div>
+          </div>                        
+
+          <div class="field">
+              <label class="label"><%= t('.email') %></label>
+              <div class="control has-icons-left">
+                  <input class="input is-medium" type="email">
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label"><%= t('.phone') %></label>
+              <div class="control has-icons-left">
+                  <input class="input is-medium" type="email">
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-phone"></i>
+                  </span>
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label"><%= t('.message') %></label>
+              <div class="control">
+                  <textarea class="textarea" placeholder="<%= t('.message_text') %>"></textarea>
+              </div>
+          </div>
+
+          <div class="field">
+              <div class="control">
+                  <button class="button is-info is-large is-fullwidth disabled" disabled><%= t('.submit') %></button>
+              </div>
+          </div>     
+      </div>
+     </div>    
+    </div>
+  </div>
+</div>
