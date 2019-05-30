@@ -2,12 +2,14 @@ sv:
   presentation:
     account:
       title: Konto
+
     index:
       title: Hem
       active_projects: Aktiva projekt
       completed_projects: Avslutade projekt
       total_project_count: Totalt antal projekt
       logged_time_entries: Loggade timmar
+      connect: Anslut företag!
 
     about:
       about: Om oss 
