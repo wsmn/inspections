@@ -1,34 +1,98 @@
-<!--Bulma-->
-<section class="hero is-dark is-small">
-  <div class="hero-body is-full">
-    <div class="container border" style="margin-top:50px;">
-      <div class="columns is-mobile is-centered">
-        <div class="columns is-half is-centered">
-          <div class="column">
-            <h1 class="text-3xl font-bold">
-              Sök Kontrollansvariga
-            </h1>
-            <p class="is-size-6 has-text-grey-light">Adress eller postnummer:</p>          
-            <div class="field has-addons">
-              <div class="control">
-                <input class="input" type="text" placeholder="123 45">
-              </div>
-              <div class="control">
-                <a class="button is-info">
-                  Search
-                </a>
-              </div>
-            </div>        
-          </div>  
-        </div>
-      </div>   
-      <div class="columns" style="margin-top:50px;">   
-        <div class="column is-4 is-paddingless border">  
-          <div class="box">
-          </div> 
-        </div>     
-        <div class="column is-8 border">
-      </div> 
+<div class="container mx-auto h-screen">
+  <div class="w-full mx-auto mt-8 md:mt-12 lg:mt-20 xl:mt-8">
+    <div class="w-3/4 mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl font-sans font-bold text-blue-900">
+        Karta
+      </h1>
+      <p class="font-medium text-gray-600">
+        Välj vilken typ av projekt du ska göra:    
+      </p>
+      <div class="w-full md:w-1/2 mx-auto mt-4">
+        <p class="control is-expanded">
+          <input class="input" type="text" placeholder="Kommun">
+        </p>
+      </div>        
     </div>
+    <div class="w-3/4 mx-auto">
+      <div class="flex md:hidden">   
+        <div class="field w-full mx-auto mt-2">
+            <div class="select is-fullwidth">
+              <select name="projectType">
+                <option value="Nyproduktion">Nyproduktion</option>
+                <option value="Renovering">Renovering</option>
+                <option value="Utbyggnad">Utbyggnad</option>
+                <option value="Industri">Industri</option>
+              </select>
+          </div>
+        </div>
+      </div>
+      <div class="px-2 mt-8">
+        <div class="flex-wrap -mx-1 hidden md:flex">
+          <div class="w-5/6 md:w-1/4 mx-auto md:mt-0 px-1">
+            <div class="text-center">
+              <%= link_to(map_path, class: 'box shadow-xl') do %> 
+                <div class="">
+                  <h1 class="text-md font-sans font-medium text-blue-900">
+                    Nyproduktion
+                  </h1>                
+                  <figure class="media-center mt-2">
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-lg fa-pencil-ruler"></i>
+                    </span>
+                  </figure>
+                </div>                  
+              <% end %>
+            </div> 
+          </div>
+          <div class="w-5/6 md:w-1/4 mx-auto mt-8 md:mt-0 px-1">
+            <div class="text-center">
+              <%= link_to(map_path, class: 'box shadow-xl') do %> 
+                <div class="">
+                  <h1 class="text-md font-sans font-medium text-blue-900">
+                    Renovering
+                  </h1>                
+                  <figure class="media-center mt-2">
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-lg fa-hammer"></i>
+                    </span>
+                  </figure>
+                </div>                  
+              <% end %>
+            </div> 
+          </div>
+          <div class="w-5/6 md:w-1/4 mx-auto mt-8 md:mt-0 px-1">
+            <div class="text-center">
+              <%= link_to(map_path, class: 'box shadow-xl') do %> 
+                <div class="">
+                  <h1 class="text-md font-sans font-medium text-blue-900">
+                    Utbyggnad
+                  </h1>                
+                  <figure class="media-center mt-2">
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-lg fa-ruler"></i>
+                    </span>
+                  </figure>
+                </div>                  
+              <% end %>
+            </div>  
+          </div>
+          <div class="w-5/6 md:w-1/4 mx-auto mt-4 md:mt-0 px-1">
+            <div class="text-center">
+              <%= link_to(map_path, class: 'box shadow-xl') do %> 
+                <div class="">
+                  <h1 class="text-md font-sans font-medium text-blue-900">
+                    Industri
+                  </h1>                
+                  <figure class="media-center mt-2">
+                    <span class="icon has-text-primary">
+                      <i class="fas fa-lg fa-hard-hat"></i>
+                    </span>
+                  </figure>
+                </div>                  
+              <% end %>
+            </div>  
+          </div>          
+        </div>
+      </div>
+    </div>    
   </div>
-</section>
