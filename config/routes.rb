@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get(:about, controller: :presentation, action: :about)
   get(:contact, controller: :presentation, action: :contact)
+  get(:support, controller: :presentation, action: :support)
   get(:kontrollansvarig, controller: :presentation, action: :kontrollansvarig)
   get(:map, controller: :presentation, action: :map)
   get(:connect, controller: :presentation, action: :connect)

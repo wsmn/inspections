@@ -26,9 +26,13 @@ class PresentationController < ApplicationController
     render(layout: 'landing')
   end
 
-  def home2 
+  def support 
     render(layout: 'landing')
   end
+
+  def home2 
+    render(layout: 'landing')
+  end  
 
   def account
     @counts = {
