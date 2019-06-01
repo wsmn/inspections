@@ -1,7 +1,10 @@
 <div class="container mx-auto h-screen">
   <div class="w-full mx-auto mt-8 md:mt-12 lg:mt-20 xl:mt-24">
     <div class="w-3/4 mx-auto text-center">
-      <h1 class="text-3xl md:text-4xl font-sans font-bold text-blue-900">
+      <p class="font-bold text-sm text-blue-500">
+        ERROR    
+      </p>
+      <h1 class="text-3xl md:text-4xl font-sans font-medium text-blue-900 mt-4">
         Beskriv problemet så noga du kan.
       </h1>
       <p class="font-medium text-gray-600 mt-8">
@@ -9,38 +12,62 @@
       </p>
     </div>
     <div class="w-full mx-auto">
-
-  <div class="w-3/4 mx-auto mt-16">
-    <div class="w-full lg:w-1/2 mx-auto">    
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="mb-4">
-          <label class="text-gray-800 text-lg font-medium" for="name">
-            Ditt namn
-          </label>
-          <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Namn Namnsson">
+      <div class="w-3/4 mx-auto mt-16">
+        <div class="w-full lg:w-2/3 mx-auto">    
+          <form class="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+              <label class="text-gray-800 text-lg font-medium" for="name">
+                Namn
+              </label>
+              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Vad heter du?">
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                Email
+              </label>
+              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                På vilken sida såg du problemet?
+              </label>
+              <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Skriv in URL:n">
+            </div>
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                Vilken webbläsare?
+              </label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth">
+                    <select name="projectType">
+                      <option value="Nyproduktion">---</option>                
+                      <option value="Nyproduktion">Chrome</option>
+                      <option value="Renovering">Edge</option>
+                      <option value="Utbyggnad">Firefox</option>
+                      <option value="Industri">Internet Explorer</option>
+                      <option value="Renovering">Safari</option>
+                      <option value="Utbyggnad">Opera</option>
+                      <option value="Industri">Safari (iOS)</option>       
+                      <option value="Industri">Chrome (iOS)</option>  
+                      <option value="Industri">Chrome (Android)</option>                                             
+                    </select>
+                  </div>
+              </div>         
+            </div>                    
+            <div class="mb-6">
+              <label class="text-gray-800 text-lg font-medium" for="email">
+                Beskriv problemet
+              </label>
+                <textarea class="h-32 shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Förklara hur man hittar problemet..."></textarea>
+            </div>        
+            <div class="flex items-center justify-center">
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" type="button">
+                Skicka in
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="mb-6">
-          <label class="text-gray-800 text-lg font-medium" for="email">
-            Email
-          </label>
-          <input class="shadow mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="name@email.com">
-        </div>
-        <div class="mb-6">
-          <label class="text-gray-800 text-lg font-medium" for="email">
-            Beskriv problemet
-          </label>
-            <textarea class="shadow appearance-none block w-full bg-white text-grey-darker border border-grey-lighter rounded py-4 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey mt-2" id="subject" type="message" placeholder="Your message here..."></textarea>
-        </div>        
-        <div class="flex items-center justify-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" type="button">
-            Skicka in
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-      
+      </div>
     </div>    
   </div>
 </div>
-
