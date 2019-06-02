@@ -51,43 +51,58 @@
   <div class="container px-4">
     <div class="w-5/6 mx-auto">
       <div class="flex flex-wrap -mx-4">
-        <div class="w-full md:w-1/3 px-4 mb-16 mt-16">
-          <div class="w-full h-32">
-            <p class="font-bold text-2xl text-blue-900">
-              Formulär    
-            </p>           
-            <p class="mt-4">
-              Färdiga formulär gjorda för att förenkla för både kund och företag.    
-            </p>
-          </div>
-          <div class="w-2/4 mt-4 mx-auto">
-            <%= image_tag('home_form.svg')%>
-          </div>            
-        </div>
-        <div class="w-full md:w-1/3 px-4 mt-16 mb-16">
-          <div class="w-full h-32">
-            <p class="font-bold text-2xl text-blue-900">
-              Kalender    
-            </p>           
-            <p class="mt-4">
-              Överskådlig kalender för alla skeden i projektet.    
-            </p>  
-          </div>  
-          <div class="w-2/4 h-24 mt-4 mx-auto">
-            <%= image_tag('home_calendar.svg')%>
-          </div>                        
-        </div>
-        <div class="w-full md:w-1/3 px-4 mt-16 mb-16">
-          <div class="w-full xl:h-32">      
+        <div class="w-full md:w-1/3 px-2 mb-16 mt-16">
+          <div class="w-full">
             <p class="font-bold text-2xl text-blue-900">
               Karta    
             </p>           
             <p class="mt-4">
-              Hitta kontrollansvariga nära dig idag. Beskriv ert projekt nedan och hitta företag med rätt expertis för just ert projekt.    
+              Använd den interaktiva kartan för att hitta lokala företag nära dig. Sortera efter erfarenhet, specialisering och betyg.    
             </p>
-          </div>  
-          <div class="w-1/3 h-24 mt-4 mx-auto">
+            <p class="mt-2">
+              <%= link_to(about_path, class: 'text-blue-400') do %>
+                <%= t('.read_more') %>          
+              <% end %>  
+            </p>             
+          </div>
+          <div class="w-2/5 mt-4 mx-auto">
             <%= image_tag('home_map.svg')%>
+          </div>            
+        </div>
+        <div class="w-full md:w-1/3 px-2 mt-16 mb-16">
+          <div class="w-full">
+            <p class="font-bold text-2xl text-blue-900">
+              Formulär    
+            </p>           
+            <p class="mt-4">
+              Spara tid och pengar med hjälp av standardiserade formulär som underlättar för både kund och företag. 
+            </p>
+            <p class="text-blue-400 mt-2">
+              <%= link_to(about_path, class: 'text-blue-400') do %>
+                <%= t('.read_more') %>          
+              <% end %>  
+            </p>               
+          </div>  
+          <div class="w-2/5 mt-2 mx-auto">
+            <%= image_tag('home_documents.svg')%>
+          </div>                        
+        </div>
+        <div class="w-full md:w-1/3 px-2 mt-16 mb-16">
+          <div class="w-full">      
+            <p class="font-bold text-2xl text-blue-900">
+              Certifierade KA    
+            </p>           
+            <p class="mt-4">
+              Företagen granskas så att de har de certifikat som krävs för att vara verksamma som kontrollansvariga.
+            </p>
+            <p class="text-blue-400 mt-2">
+              <%= link_to(about_path, class: 'text-blue-400') do %>
+                <%= t('.read_more') %>          
+              <% end %>  
+            </p>               
+          </div>  
+          <div class="w-2/5 mt-2 mx-auto">
+            <%= image_tag('about_checker.svg')%>
           </div>                  
         </div>
       </div>
