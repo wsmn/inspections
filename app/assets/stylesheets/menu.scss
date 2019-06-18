@@ -1,6 +1,6 @@
 .aside {
   background: $primary-background;
-  padding: 2rem 1rem 1rem 1.5rem;
+  padding: 2rem 1rem 1rem 1.5rem; 
 
   &.is-fullheight {
     min-height: 100vh;
@@ -8,6 +8,7 @@
 
   .menu-list {
     a {
+      color: $white; 
       &:hover {
         background-color: $primary;
         color: $white;

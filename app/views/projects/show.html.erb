@@ -2,28 +2,40 @@
   <%= render('panel', active: :show_project, project: @project) %>
 <% end %>
 
-<%= project_title(@project.status) %>
-<h2 class="subtitle is-3"><%= @project %></h2>
+<div class="w-full -mt-4 px-2">
+	<%= project_title(@project.status) %>
+	<div class="flex flex-wrap -mt-4 mb-8">
+		<div class="w-full md:w-1/3 px-2">
+			<div class="flex">
+				<div class="w-full mt-2">
+					<h2 class="text-3xl text-blue-900 -ml-2"><%=@project%></h2>        
+				</div>
+			</div>
+			<div class="w-full mt-2"> 
+				<div class="w-full flex flex-wrap">		
+				</div>			 
+			</div>                     
+		</div>
+		<div class="w-full md:w-1/3 px-2 flex">
+			<div class="w-1/2 mx-auto">                   
+			</div>     
+		</div>
+		<div class="w-full md:w-1/3 px-2 hidden md:flex">
+		</div>	
+	</div>
+</div>
 
-<div class="tile is-ancestor">
-  <div class="tile is-vertical">
-    <div class="tile">
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <%= render(@project.customer) %>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child">
-          <%= render('inspections/upcoming', inspections: @inspections,
-                                             project: @project) %>
-        </div>
-      </div>
-    </div>
-    <div class="tile is-parent">
-      <div class="tile is-child">
-        <%= render('images', image: @image, project: @project) %>
-      </div>
-    </div>
-  </div>
+<div class="px-2">
+	<div class="flex flex-wrap -mx-2">
+		<div class="w-full md:w-1/2 px-2">
+			<%= render(@project.customer) %>
+		</div>
+		<div class="w-full md:w-1/2 px-2">
+			<%= render('inspections/upcoming', inspections: @inspections,
+			project: @project) %>
+		</div>		
+	</div>
+	<div class="w-full">
+		<%= render('images', image: @image, project: @project) %>		
+	</div>
 </div>

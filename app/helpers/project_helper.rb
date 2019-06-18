@@ -12,7 +12,7 @@ module ProjectHelper
 
   def project_title(status = nil)
     content = [Project.model_name.human, project_tag(status)]
-    content_tag(:h1, safe_join(content), class: "title is-1")
+    content_tag(:h1, safe_join(content), class: "text-4xl font-bold text-blue-900")
   end
 
   def project_tag(status, size: "medium", pos: "is-pulled-right")
