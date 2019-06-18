@@ -3,34 +3,150 @@
   <%= render('shortcuts', active: @status) %>
 <% end %>
 
-<h1 class="title is-1"><%= t('.title') %></h1>
-<div class="columns">
-  <div class="column">
-    <nav class="level is-mobile">
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading"><%= t('.active_projects') %></p>
-          <p class="title"><%= @counts[:active] %></p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading"><%= t('.completed_projects') %></p>
-          <p class="title"><%= @counts[:completed] %></p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading"><%= t('.total_project_count') %></p>
-          <p class="title"><%= @counts[:total] %></p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading"><%= t('.logged_time_entries') %></p>
-          <p class="title">789</p>
-        </div>
-      </div>
-    </nav>
-  </div>
+<div class="flex flex-wrap -mt-4">
+    <div class="w-full md:w-1/3 px-2 mb-8">
+      	<div class="flex">
+			<div class="w-full">
+        <h1 class="title is-1"><%= t('.title') %></h1>
+			</div>
+		</div>
+		<div class="w-full mt-6">
+			<%= render('/searches/form', target: :project) %>    
+		</div>
+		<div class="w-full mt-2"> 
+			<div class="w-full flex flex-wrap">
+				<div class="mr-4">
+					<p class="font-semibold text-xl mt-1">
+							Filter:
+					</p>
+				</div>		
+				<div class="dropdown is-hoverable mr-4">
+					<div class="dropdown-trigger">
+						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+							<span>Projekt</span>
+							<span class="icon is-small">
+								<i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+					<div class="dropdown-menu" id="dropdown-menu" role="menu">
+						<div class="dropdown-content">
+							<a href="#" class="dropdown-item">
+								Aktiva projekt
+							</a>
+							<a class="dropdown-item">
+								Pausade projekt
+							</a>
+							<a href="#" class="dropdown-item">
+								Arkiverade
+							</a>
+							<a href="#" class="dropdown-item">
+								Avbrutna
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="dropdown is-hoverable mr-4">
+					<div class="dropdown-trigger">
+						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+							<span>Kategori</span>
+							<span class="icon is-small">
+								<i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+					<div class="dropdown-menu" id="dropdown-menu" role="menu">
+						<div class="dropdown-content">
+							<a href="#" class="dropdown-item">
+								Nyproduktion
+							</a>
+							<a class="dropdown-item">
+								Renovering
+							</a>
+							<a href="#" class="dropdown-item">
+								Utbyggnad
+							</a>
+							<a href="#" class="dropdown-item">
+								Industri
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="dropdown is-hoverable">
+					<div class="dropdown-trigger">
+						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+							<span>Typ</span>
+							<span class="icon is-small">
+								<i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+					<div class="dropdown-menu" id="dropdown-menu" role="menu">
+						<div class="dropdown-content">
+							<a href="#" class="dropdown-item">
+								Villor
+							</a>
+							<a class="dropdown-item">
+								Lägenheter
+							</a>
+							<a href="#" class="dropdown-item">
+								Industri
+							</a>
+							<a href="#" class="dropdown-item">
+								Annat
+							</a>
+						</div>
+					</div>
+				</div>									
+			</div>			 
+		</div>                     
+	</div>
+	<div class="w-full md:w-1/3 px-2 hidden md:flex">
+		<div class="w-2/3 mx-auto">                  
+			<%= image_tag('projects.svg')%>   
+		</div>    		                   
+	</div>
+	<div class="w-full md:w-1/3 px-2 flex">
+		<div class="w-3/4">
+		</div>
+		<div class="">
+			<p class="control mt-3">
+				<a href="/projects/new" class="button is-success">
+					<%= icon('fas', 'plus', class: 'mr-2') %>
+					Nytt projekt
+				</a>
+			</p>                  
+		</div>	      
+	</div>
+</div>
+
+<div class="columns mt-64">
+	<div class="column">
+		<nav class="level is-mobile">
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading"><%= t('.active_projects') %></p>
+					<p class="title"><%= @counts[:active] %></p>
+				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading"><%= t('.completed_projects') %></p>
+					<p class="title"><%= @counts[:completed] %></p>
+				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading"><%= t('.total_project_count') %></p>
+					<p class="title"><%= @counts[:total] %></p>
+				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading"><%= t('.logged_time_entries') %></p>
+					<p class="title">789</p>
+				</div>
+			</div>
+		</nav>
+	</div>
 </div>
