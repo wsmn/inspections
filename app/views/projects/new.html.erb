@@ -2,7 +2,7 @@
   <%= render('panel', active: :new) %>
 <% end %>
 
-<%= project_title %>
-<h2 class="subtitle is-3"><%= t('.title') %></h2>
-
-<%= render('form', project: @project) %>
+<div class="w-full -mt-4">
+	<h1 class="title is-3"><%= t('.title') %>  <i class="ml-2 far fa-sm fa-folder-open"></i></h1>
+	<%= render('form', project: @project) %>  
+</div>

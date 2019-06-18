@@ -1,8 +1,123 @@
+<!--
+  <%= simple_form_for(project) do |f| %>
+    <%= f.association(:customer, collection: Customer.all) %>
+    <%= f.input(:status, collection: project_statuses,
+                        selected: project.status) %>
+    <%= f.input(:title) %>
+    <%= f.input(:description, input_html: { rows: '5' }) %>
+    <%= bulma_button(f) %>
+  <% end %>
+-->
 <%= simple_form_for(project) do |f| %>
-  <%= f.association(:customer, collection: Customer.all) %>
-  <%= f.input(:status, collection: project_statuses,
-                       selected: project.status) %>
-  <%= f.input(:title) %>
-  <%= f.input(:description, input_html: { rows: '5' }) %>
-  <%= bulma_button(f) %>
+<div class="w-2/3">
+	<div class="w-full border-t border-b border-solid border-gray-400">
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.customer') %>  
+				</p>	   
+			</div>
+			<div class="w-3/5">
+				<%= f.association(:customer, collection: Customer.all, label:false) %>
+			</div>
+			<div class="w-1/10 border ml-16">
+				<%= link_to(connect_path, class: 'button is-primary font-medium') do %>
+				<%= icon('fas', 'plus', class: 'mr-2') %>
+					<%= t('.new_customer') %>          
+				<% end %>   	
+			</div>							
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.project_name') %>  
+				</p>	   
+			</div>
+			<div class="w-2/5">				
+				<%= f.input(:title, label:false) %>
+			</div>						
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.ID') %>
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<p class="input">
+				</p>
+			</div>						
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.status') %> 
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<%= f.input(:status, collection: project_statuses,
+									selected: project.status, label:false) %>
+			</div>						
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.category') %> 
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<div class="select is-fullwidth">
+					<select name="projectType">
+						<option value="Nyproduktion">Nyproduktion</option>
+						<option value="Renovering">Renovering</option>
+						<option value="Utbyggnad">Utbyggnad</option>
+						<option value="Industri">Industri</option>
+					</select>
+				</div>	
+			</div>
+			<div class="ml-8 mr-8">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.type') %> 
+				</p>	   
+			</div>
+			<div class="w-1/6">
+				<div class="select is-fullwidth">
+					<select name="projectType">
+						<option value="Nyproduktion">Villa</option>
+						<option value="Renovering">Lägenhet(er)</option>
+						<option value="Utbyggnad">Industrilokal</option>
+						<option value="Industri">Annat</option>
+					</select>
+				</div>	
+			</div>										
+		</div>				
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.description') %> 
+				</p>	   
+			</div>
+			<div class="w-4/5 mb-8">
+				<%= f.input(:description, label: false, input_html: { rows: '5' }) %>
+			</div>						
+		</div>	  		  		  
+	</div>
+	<div class="w-4/5 mt-8 flex">
+		<div class="">
+			<%= bulma_button(f) %>
+		</div>
+		<div class="ml-2">		
+			<%= link_to(connect_path, class: 'button is-grey font-medium') do %>
+				<%= t('.cancel') %>          
+			<% end %>
+		</div>				 		   
+	</div>
+</div>
 <% end %>
+
+
+<div class="w-full mt-24">
+	<div class="w-full">	
+		<p class="font-bold text-xl text-blue-900">Dina senast skapade projekt:</p>
+	</div>
+</div>

@@ -1,3 +1,4 @@
+<!--
 <%= simple_form_for(customer) do |f| %>
   <%= f.input(:name, input_html: { autofocus: true }) %>
   <%= f.input(:phone) %>
@@ -5,3 +6,116 @@
   <%= f.input(:email) %>
   <%= bulma_button(f) %>
 <% end %>
+-->
+
+
+<%= simple_form_for(customer) do |f| %>
+<div class="w-2/3">
+	<div class="w-full border-t border-b border-solid border-gray-400">
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.name') %> 
+				</p>	   
+			</div>
+			<div class="w-3/5">
+          		<%= f.input(:name, input_html: { autofocus: true }, label:false) %>
+			</div>						
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.phone') %>
+				</p>	   
+			</div>
+			<div class="w-2/5">				
+				<%= f.input(:phone, label:false) %>
+			</div>						
+		</div>
+		<div class="w-full mt-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.address') %>
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<%= f.input(:address, label:false) %>
+			</div>
+			<div class="w-1/12 ml-8">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.zip_code') %>
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<p class="input">
+				<!--Fix zip code input-->
+				</p>
+			</div>										
+		</div>
+		<div class="w-full mt-8 flex">
+				<div class="w-1/6">
+					<p class="text-sm font-semibold mt-2">
+						<%= t('.city') %>
+					</p>	   
+				</div>
+				<div class="w-1/5">
+					<p class="input">
+						<!--Fix city input-->
+					</p>
+				</div>
+				<div class="w-1/12 ml-8">
+					<p class="text-sm font-semibold mt-2">
+						<%= t('.country') %>
+					</p>	   
+				</div>
+				<div class="w-1/5">
+					<p class="input">
+					<!--Fix country code input-->
+					</p>
+				</div>										
+		</div>		
+		<div class="w-full mt-8 mb-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.email') %>
+				</p>	   
+			</div>
+			<div class="w-1/5">
+				<%= f.input(:email, label:false) %>
+			</div>						
+		</div>
+		<div class="w-full mt-8 mb-8 flex">
+			<div class="w-1/6">
+				<p class="text-sm font-semibold mt-2">
+					<%= t('.customer_type') %>
+				</p>	   
+			</div>
+			<div class="mr-8 mt-2">
+				<input type="radio" name="customer_type" value="person"><p class="text-sm font-semibold inline">Privatperson</p>
+			</div>
+			<div class="mt-2">
+				<form>
+					<input type="radio" name="customer_type" value="company"><p class="text-sm font-semibold inline">Företag</p>					
+				</form>	
+			</div>											
+		</div>					  		  		  
+	</div>
+	<div class="w-4/5 mt-8 flex">
+		<div class="">
+			<%= bulma_button(f) %>
+		</div>
+		<div class="ml-2">		
+			<%= link_to(connect_path, class: 'button is-grey font-medium') do %>
+				<%= t('.cancel') %>          
+			<% end %>
+		</div>				 		   
+	</div>
+</div>
+<% end %>
+
+
+<div class="w-full mt-24">
+	<div class="w-full">	
+		<p class="font-bold text-xl text-blue-900">Dina senast tillagda kunder:</p>
+	</div>
+</div>

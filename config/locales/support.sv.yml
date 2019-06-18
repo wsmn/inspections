@@ -6,6 +6,7 @@ sv:
       create: Skapa %{model}
       submit: Spara %{model}
       update: Ändra %{model}
+      cancel: Avbryt
 
   number:
     currency:

@@ -1,7 +1,9 @@
-<h1 class="title is-1"><%= t('.title') %></h1>
-
 <% content_for(:sidemenu) do %>
   <%= render('panel', active: :new) %>
 <% end %>
 
-<%= render('form', customer: @customer) %>
+<div class="w-full -mt-4">
+  	<h1 class="title is-3"><%= t('.title') %><i class="ml-2 far fa-sm fa-id-card"></i></h1>
+	<%= render('form', customer: @customer) %>  
+</div>
+

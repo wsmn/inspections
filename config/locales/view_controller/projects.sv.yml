@@ -11,6 +11,17 @@ sv:
 
     new:
       title: Nytt projekt
+    
+    form:
+      customer: Kund
+      new_customer: Ny kund
+      project_name: Projektnamn
+      ID: Projekt-ID
+      status: Status
+      category: Kategori
+      type: Typ
+      description: Beskrivning
+      cancel: Avbryt
 
     project_panel:
       all_inspections: Alla besiktningar

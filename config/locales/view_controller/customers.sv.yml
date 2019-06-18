@@ -27,6 +27,17 @@ sv:
     new:
       title: Ny kund
 
+    form:
+      name: Namn
+      phone: Telefon
+      address: Adress
+      zip_code: Post nr
+      city: Stad
+      country: Land
+      email: Email
+      customer_type: Kundtyp
+      cancel: Avbryt  
+
     destroy:
       success: Kund raderades!
 
