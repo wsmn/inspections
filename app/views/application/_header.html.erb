@@ -1,87 +1,63 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
+  	<div class="navbar-brand">
         <%= link_to(root_path, class: 'flex items-center p-4') do%>
           <%= image_tag('apti_logo.svg', style: 'width: 3.75rem;') %>
         <% end %>
+		<a role="button" class="navbar-burger">
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+		<span aria-hidden="true"></span>
+		</a>
+  	</div>
 
-    <a role="button" class="navbar-burger">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+  	<div class="navbar-menu">
+		<div class="navbar-start">
+			<%= link_to(t('.home'),
+						root_path,
+						class: navbar_is_active('navbar-item is-tab', 'home')) %>
+			<%= link_to(t('.map'),
+						map_path,
+						class: navbar_is_active('navbar-item is-tab', 'map')) %>                                                                                                                                                                        
+			<div class="navbar-item has-dropdown is-hoverable">
+				<%= link_to(t('.kontrollansvarig'),
+						kontrollansvarig_path,
+						class: navbar_is_active('navbar-link is-tab', 'kontrollansvarig')) %>
+				<div class="navbar-dropdown">
+					<%= link_to(t('.about'),
+								about_path,
+								class: navbar_is_active('navbar-item is-tab', 'about')) %>
+					<%= link_to(t('.connect'),
+								connect_path,
+								class: navbar_is_active('navbar-item is-tab', 'connect')) %>
+					<hr class="navbar-divider">
+					<%= link_to(t('.contact'),
+								contact_path,
+								class: navbar_is_active('navbar-item is-tab', 'contact')) %>
+				</div>
+			</div>
+    	</div>
 
-  <div class="navbar-menu">
-    <div class="navbar-start">
-      <%= link_to(t('.home'),
-                root_path,
-                class: navbar_is_active('navbar-item is-tab', 'home')) %>
-      <%= link_to(t('.map'),
-                map_path,
-                class: navbar_is_active('navbar-item is-tab', 'map')) %>                                                                                                                                                                        
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <%= link_to(t('.kontrollansvarig'),
-                  kontrollansvarig_path,
-                  class: navbar_is_active('navbar-link is-tab', 'kontrollansvarig')) %>
-        <div class="navbar-dropdown">
-          <%= link_to(t('.about'),
-                    about_path,
-                    class: navbar_is_active('navbar-item is-tab', 'about')) %>
-          <%= link_to(t('.connect'),
-                    connect_path,
-                    class: navbar_is_active('navbar-item is-tab', 'connect')) %>
-          <hr class="navbar-divider">
-          <%= link_to(t('.contact'),
-                    contact_path,
-                    class: navbar_is_active('navbar-item is-tab', 'contact')) %>
-        </div>
-      </div>
-      <% if signed_in? %>
-            <%= link_to(account_path, class: 'navbar-item is-tab') do %>
-              <%= icon('fas', 'user', class: 'mr-1') %>
-              <%= t('.account') %>
-            <% end %>
-          <%= link_to(Project.model_name.human(count: 2),
-                    projects_path,
-                    class: navbar_is_active('navbar-item is-tab', 'projects')) %>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%= link_to(Customer.model_name.human(count: 2),
-                      customers_path,
-                      class: navbar_is_active('navbar-item is-tab', 'customers')) %>
-          </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%= link_to(TimeEntry.model_name.human(count: 2),
-                      time_entries_path,
-                      class: navbar_is_active('navbar-item is-tab', 'time_entries')) %>            
-            <%= link_to(sign_out_path, method: :delete, class: 'navbar-item is-tab') do %>
-              <%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
-              <%= t('.sign_out') %>
-            <% end %>
-          <% end %>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-          <% if signed_in? %>
-            <%= link_to(account_path, class: 'button bg-blue-100') do %>
-              <%= icon('fas', 'user', class: 'mr-1') %>
-              <%= t('.account') %>
-            <% end %>
-            <%= link_to(sign_out_path, method: :delete, class: 'button') do %>
-              <%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
-              <%= t('.sign_out') %>
-            <% end %>
-          <% else %>
-            <%= link_to(connect_path, class: 'button is-primary mr-2') do %>
-              <%= t('.connect') %>          
-            <% end %>          
-            <%= link_to(sign_in_path, class: 'button') do %>
-              <%= t('.sign_in') %>
-              <!--<%= icon('fas', 'user', class: 'ml-1') %>-->             
-            <% end %>
-          <% end %>
-      </div>
-    </div>
-  </div>
+		<div class="navbar-end">
+			<div class="navbar-item">
+				<% if signed_in? %>
+					<%= link_to(account_path, class: 'button bg-blue-100') do %>
+					<%= icon('fas', 'user', class: 'mr-1') %>
+					<%= t('.account') %>
+					<% end %>
+					<%= link_to(sign_out_path, method: :delete, class: 'button') do %>
+					<%= icon('fas', 'sign-out-alt', class: 'mr-1') %>
+					<%= t('.sign_out') %>
+					<% end %>
+				<% else %>
+					<%= link_to(connect_path, class: 'button is-primary mr-2') do %>
+					<%= t('.connect') %>          
+					<% end %>          
+					<%= link_to(sign_in_path, class: 'button') do %>
+					<%= t('.sign_in') %>
+					<!--<%= icon('fas', 'user', class: 'ml-1') %>-->             
+					<% end %>
+				<% end %>
+			</div>
+    	</div>
+  	</div>
 </nav>
