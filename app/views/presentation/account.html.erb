@@ -10,7 +10,7 @@
 					<%= image_tag('profile_pic.svg')%>
 				</div>	
 				<div class="w-2/3 ml-4 mt-2">
-					<h1 class="text-3xl font-sans font-bold text-blue-900">Välkommen,<p class="-mt-3"> <%= current_user.name %>!</p></h1>
+					<h1 class="text-3xl font-medium text-blue-900">Välkommen,<p class="-mt-3"> <%= current_user.name %>!</p></h1>
 				</div>
 			</div>                 
 		</div>
@@ -40,7 +40,7 @@
 
 	<div class="w-full border-t border-gray-500 px-2">
 		<div class="flex flex-wrap mt-8 -mx-2"> 
-			<div class="w-full lg:w-1/2 bg-white shadow-xl rounded-lg overflow-auto px-2">	
+			<div class="w-full xl:w-1/2 bg-white shadow-xl rounded-lg overflow-auto xl:ml-6 px-2">	
 				<div class="w-full border-b border-black p-2">
 					<h1 class="text-lg font-semibold text-blue-900 ml-2"><i class="mr-2 far fa-sm fa-list-alt"></i>Aktiva projekt</h1>
 				</div>	
@@ -48,7 +48,7 @@
 					<%= render('projects/table', projects: @projects = Project.includes(:customer).active) %>				
 				</div>
 			</div>
-			<div class="w-full lg:w-5/12 bg-white shadow-xl rounded-lg overflow-auto px-2 lg:ml-16 mt-8 lg:mt-0">	
+			<div class="w-full xl:w-5/12 bg-white shadow-xl rounded-lg overflow-auto px-2 xl:ml-16 mt-8 xl:mt-0">	
 				<div class="w-full border-b border-black p-2">
 					<h1 class="text-lg font-semibold text-blue-900 ml-2"><i class="mr-2 far fa-sm fa-address-card"></i>Nya kunder</h1>
 				</div>	
