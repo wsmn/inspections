@@ -35,6 +35,9 @@ sv:
       all_projects: Alla projekt
       new: Nytt projekt
 
+    destroy:
+      success: Projektet raderades!
+
     edit:
       title: Redigera projekt
 

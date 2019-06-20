@@ -35,6 +35,7 @@ class PresentationController < ApplicationController
   end  
 
   def account
+    @customers=Customer.all    
     @counts = {
       active: Project.active.count,
       completed: Project.completed.count,

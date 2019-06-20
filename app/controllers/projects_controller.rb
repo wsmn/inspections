@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
     @projects = @projects.where(status: @status) if @status.present?
   end
 
+  def destroy
+    Project.find(params[:id]).destroy!
+    redirect_to(projects_path, notice: t(".success"))
+  end  
+
   def new
     @project = Project.new
   end

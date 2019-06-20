@@ -2,21 +2,39 @@
 <% if headline.present? %>
   <h4 class="subtitle"><%= headline %></h4>
 <% end %>
+<% if projects.any? %>
 <table class="table is-striped is-fullwidth">
-  <thead>
-    <tr>
-      <td> <%= Project.human_attribute_name(:title) %></td>
-      <td> <%= Customer.model_name.human %></td>
-      <td> <%= Project.human_attribute_name(:status) %></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% projects.each do |p| %>
-      <tr>
-        <td> <%= link_to(p.title, p) %> </td>
-        <td> <%= link_to(p.customer, p.customer) %> </td>
-        <td> <%= project_tag(p.status, pos: '', size: 'small') %> </td>
-      </tr>
-    <% end %>
-  </tbody>
+	<thead>
+		<tr>
+			<td> <%= Project.human_attribute_name(:title) %></td>
+			<td> <%= Customer.model_name.human %></td>
+			<td> <%= Project.human_attribute_name(:status) %></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% projects.each do |p| %>
+			<tr>
+				<td> <%= link_to(p.title, p) %> </td>
+				<td> <%= link_to(p.customer, p.customer) %> </td>
+				<td> <%= project_tag(p.status, pos: '', size: 'small') %> </td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
+<% else %>
+<div class="w-1/3 mx-auto">
+	<div class="w-3/5 mx-auto mt-8">
+		<%= image_tag('no_data.svg')%>
+	</div>
+	<div class="w-3/4 mx-auto">
+	<% unless current_page?('/projects') %>
+		<p class="text-sm font-semibold text-blue-900 text-center">Inga aktiva projekt!</p>
+		<p class="text-sm text-blue-900 text-center mt-1 mb-8">Klicka <a href="/projects/new" class="text-blue-700">här</a> för att skapa ditt första aktiva projekt.</p>
+	<% end %>
+	<% unless current_page?('/account') %>		
+		<p class="text-2xl font-semibold text-blue-900 text-center">Inga projekt!</p>
+		<p class="text-md text-blue-900 text-center mt-1">Klicka <a href="/projects/new" class="text-blue-700">här</a> för att skapa ditt första projekt.</p>
+	<% end %>
+	</div>	
+</div>	
+<% end %>
