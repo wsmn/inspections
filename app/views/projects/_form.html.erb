@@ -18,14 +18,14 @@
 						Skapa ett nytt projekt.
 					</h1>
 					<div class="w-1/4 mt-6 mx-auto">
-						<%= image_tag('write.svg')%>  
-					</div>	 
-				</div>   
+						<%= image_tag('write.svg')%>
+					</div>
+				</div>
 				<div class="mt-4 mb-4">
 					<label class="text-gray-800 text-lg font-medium" for="name">
 						<%= t('.customer') %>
 					</label>
-					<%= f.association(:customer, collection: Customer.all, label:false, include_blank: "Välj kund", input_html: {:style => 'width: 1000px'}) %>
+					<%= f.association(:customer, as: :select, collection: Customer.all, label:false, include_blank: "Välj kund") %>
 				</div>
 				<div class="mb-4">
 					<label class="text-gray-800 text-lg font-medium">
@@ -43,26 +43,26 @@
 						<%= t('.status') %>
 					</label>
 					<%= f.input(:status, collection: project_statuses,
-					selected: project.status, label:false, input_html: {:style => 'width: 1000px'}) %>       
-				</div>                    
+					selected: project.status, label:false, input_html: {:style => 'width: 1000px'}) %>
+				</div>
 				<div class="mb-6">
 					<label class="text-gray-800 text-lg font-medium">
-						<%= t('.description') %> 
+						<%= t('.description') %>
 					</label>
-					<%= f.input(:description, label: false, input_html: { rows: '4' }) %>			</div>        
+					<%= f.input(:description, label: false, input_html: { rows: '4' }) %>			</div>
 				<div class="flex items-center justify-center">
 						<div class="">
 								<%= bulma_button(f) %>
 							</div>
-							<div class="ml-2">		
+							<div class="ml-2">
 								<%= link_to('/account', class: 'button is-grey font-medium') do %>
-									<%= t('.cancel') %>          
+									<%= t('.cancel') %>
 								<% end %>
-							</div>	
+							</div>
 					</button>
 				</div>
 			</div>
 		</div>
-	</div>    
+	</div>
 </div>
 <% end %>
