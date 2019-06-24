@@ -4,119 +4,21 @@
 <% end %>
 
 <div class="flex flex-wrap -mt-6 border-b border-black">
-    <div class="w-full md:w-1/3 px-2 mt-2">
-      	<div class="flex">
-			<div class="w-full">
-				<h1 class="text-4xl font-medium text-blue-900"><%= t('.title') %></h1>
-			</div>
+    <div class="w-1/2 lg:w-1/3 px-2 mt-2">
+		<div class="w-full">
+			<h1 class="text-4xl font-medium text-blue-900"><%= t('.title') %></h1>
 		</div>
-		<div class="w-full mt-6">
-			<%= render('/searches/form', target: :project) %>    
-		</div>
-		<div class="w-full"> 
-			<div class="w-full flex flex-wrap">
-				<!--	
-				<div class="mr-4">
-					<p class="font-semibold text-xl mt-1">
-							Filter:
-					</p>
-				</div>			
-				<div class="dropdown is-hoverable mr-4">
-					<div class="dropdown-trigger">
-						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-							<span>Projekt</span>
-							<span class="icon is-small">
-								<i class="fas fa-angle-down" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-					<div class="dropdown-menu" id="dropdown-menu" role="menu">
-						<div class="dropdown-content">
-							<a href="/projects?status=active" class="dropdown-item">
-								Aktiva projekt
-							</a>
-							<a href="/projects?status=paused" class="dropdown-item">
-								Pausade projekt
-							</a>
-							<a href="/projects?status=completed" class="dropdown-item">
-								Färdiga
-							</a>
-							<a href="/projects?status=cancelled" class="dropdown-item">
-								Avbrutna
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="dropdown is-hoverable mr-4">
-					<div class="dropdown-trigger">
-						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-							<span>Kategori</span>
-							<span class="icon is-small">
-								<i class="fas fa-angle-down" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-					<div class="dropdown-menu" id="dropdown-menu" role="menu">
-						<div class="dropdown-content">
-							<a href="#" class="dropdown-item">
-								Nyproduktion
-							</a>
-							<a class="dropdown-item">
-								Renovering
-							</a>
-							<a href="#" class="dropdown-item">
-								Utbyggnad
-							</a>
-							<a href="#" class="dropdown-item">
-								Industri
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="dropdown is-hoverable">
-					<div class="dropdown-trigger">
-						<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-							<span>Typ</span>
-							<span class="icon is-small">
-								<i class="fas fa-angle-down" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-					<div class="dropdown-menu" id="dropdown-menu" role="menu">
-						<div class="dropdown-content">
-							<a href="#" class="dropdown-item">
-								Villor
-							</a>
-							<a class="dropdown-item">
-								Lägenheter
-							</a>
-							<a href="#" class="dropdown-item">
-								Industri
-							</a>
-							<a href="#" class="dropdown-item">
-								Annat
-							</a>
-						</div>
-					</div>
-				</div>
-				-->									
-			</div>			 
-		</div>                     
 	</div>
-	<div class="w-full md:w-1/3 px-2 flex">
-		<div class="w-3/4">
-		</div>
-		<div class="">
-                 
-		</div>	      
+	<div class="flex-grow">
 	</div>
-	<div class="w-full md:w-1/3 px-2 hidden md:flex justify-end">
-		<div class="w-full xl:w-1/2">                  
-			<%= image_tag('projects.svg')%>   
-		</div>    		                   
-	</div>	
+	<div class="w-1/4 md:w-1/5">
+			<%= image_tag('projects.svg', :class => "h-32")%>
+	</div>
+	<div class="w-full -mt-12 ml-2">
+		<%= render('/searches/form', target: :project) %>
+	</div>
 </div>
 
-<div class="w-full bg-white">
+<div class="bg-white mt-8">
 	<%= render('table', projects: @projects) %>
 </div>

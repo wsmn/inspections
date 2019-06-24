@@ -20,9 +20,9 @@
 						Skapa en ny kund.
 					</h1>
 					<div class="w-1/4 mt-6 mx-auto">
-						<%= image_tag('no_users.svg')%>  
-					</div>	 
-				</div>   
+						<%= image_tag('no_users.svg')%>
+					</div>
+				</div>
 				<div class="mt-4 mb-4">
 					<label class="text-gray-800 text-lg font-medium" for="name">
 					<%= t('.name') %>
@@ -33,7 +33,7 @@
 					<label class="text-gray-800 text-lg font-medium">
 						<%= t('.phone') %>
 					</label>
-					<%= f.input(:phone, label:false) %> 
+					<%= f.input(:phone, label:false) %>
 				</div>
 				<div class="flex flex-wrap -mx-2">
 					<div class="w-3/4 mb-4 px-2">
@@ -48,7 +48,7 @@
 						</label>
 						<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="111 11">
 					</div>
-				</div>				
+				</div>
 				<div class="flex -mx-2">
 					<div class="w-1/2 mb-4 px-2">
 						<label class="text-gray-800 text-lg font-medium">
@@ -62,10 +62,10 @@
 						</label>
 						<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Sverige">
 					</div>
-				</div>	                   
+				</div>
 				<div class="mb-6">
 					<label class="text-gray-800 text-lg font-medium">
-						<%= t('.email') %> 
+						<%= t('.email') %>
 					</label>
 					<%= f.input(:email, label:false) %>
 				</div>
@@ -76,20 +76,20 @@
 					</div>
 					<div class="mt-2 ml-8">
 						<form>
-							<input type="radio" name="customer_type" value="company"><p class="text-sm font-semibold inline">Företag</p>					
-						</form>	
+							<input type="radio" name="customer_type" value="company"><p class="text-sm font-semibold inline">Företag</p>
+						</form>
 					</div>
-					</div>											
-				</div>	        
+					</div>
+				</div>
 				<div class="flex items-center justify-center">
 						<div class="">
 								<%= bulma_button(f) %>
 							</div>
-							<div class="ml-2">		
+							<div class="ml-2">
 								<%= link_to('/account', class: 'button is-grey font-medium') do %>
-									<%= t('.cancel') %>          
+									<%= t('.cancel') %>
 								<% end %>
-							</div>	
+							</div>
 					</button>
 				</div>
 			</div>
@@ -98,7 +98,7 @@
 	<div class="w-1/6 lg:hidden xl:flex">
 	</div>
 	<div class="w-1/12 hidden lg:flex xl:hidden">
-	</div>	
+	</div>
 	<div class="w-full lg:w-1/4">
 		<div class="w-full bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4 mt-8">
 			<div class="text-center">
@@ -108,9 +108,9 @@
 				<div class="h-64">
 				</div>
 				<div class="h-64">
-				</div>		
-			</div>   
-		</div>		
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <% end %>
