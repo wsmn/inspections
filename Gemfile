@@ -13,7 +13,7 @@ gem "clearance" # Authentication
 gem "font-awesome-sass"
 gem "mini_magick"
 gem "pg"
-gem "puma", "~> 4.0"
+gem "puma", "~> 4.1"
 gem "sassc-rails"
 gem "simple_form"
 gem "textacular", "~> 5.0"
