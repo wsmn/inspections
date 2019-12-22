@@ -18,7 +18,6 @@ module BulmaFormHelper
     buttons = [bulma_submit(f, text)]
     buttons << bulma_destroy(f.object, parent: parent)
 
-    cls = buttons.size > 1 ? "field is-grouped" : "field"
     buttons = content_tag(:div, safe_join(buttons))
     horizontal ? bulma_horizontal_button(buttons) : buttons
   end
@@ -26,7 +25,7 @@ module BulmaFormHelper
   def bulma_submit(form, text)
     content_tag(:p, class: "control") do
       if text.present?
-        form.button(:submit, text, class: cls="button is-primary is-large is-fullwidth")
+        form.button(:submit, text, class: "button is-primary is-large is-fullwidth")
       else
         form.button(:submit)
       end

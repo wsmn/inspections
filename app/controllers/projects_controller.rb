@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   def destroy
     Project.find(params[:id]).destroy!
     redirect_to(projects_path, notice: t(".success"))
-  end  
+  end
 
   def new
     @project = Project.new
