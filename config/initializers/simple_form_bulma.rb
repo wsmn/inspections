@@ -23,7 +23,7 @@ SimpleForm.setup do |config|
     b.use :label, class: "label"
     b.use :input, wrap_with: {tag: "p", class: "control"}, class: "input"
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :vertical_select, tag: "div", class: "field" do |b|
@@ -34,7 +34,7 @@ SimpleForm.setup do |config|
       ba.use :input, wrap_with: {tag: "span", class: "select"}
     end
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :vertical_datepicker, tag: "div", class: "field" do |b|
@@ -44,7 +44,7 @@ SimpleForm.setup do |config|
     b.use :input, wrap_with: {tag: "p", class: "control"},
                   class: "input datepicker"
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :vertical_boolean, tag: "div", class: "field" do |b|
@@ -59,7 +59,7 @@ SimpleForm.setup do |config|
     end
 
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :vertical_radio_and_checkboxes, tag: "div",
@@ -69,7 +69,7 @@ SimpleForm.setup do |config|
     b.use :label, class: "label"
     b.use :input, wrap_with: {tag: "p", class: "control"}
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :horizontal_form, tag: "div",
@@ -89,7 +89,7 @@ SimpleForm.setup do |config|
         bb.use :input, wrap_with: {tag: "div", class: "control"},
                        class: "input"
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
     end
   end
@@ -107,7 +107,7 @@ SimpleForm.setup do |config|
           bc.use :input, wrap_with: {tag: "span", class: "select"}, class: ""
         end
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
     end
   end
@@ -123,7 +123,7 @@ SimpleForm.setup do |config|
         bb.use :input, wrap_with: {tag: "p", class: "control"},
                        class: "input datepicker"
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
     end
   end
@@ -141,7 +141,7 @@ SimpleForm.setup do |config|
           bc.use :input, wrap_with: {tag: "span", class: "checkbox"}
         end
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
     end
   end
@@ -159,7 +159,7 @@ SimpleForm.setup do |config|
       ba.wrapper tag: "div", class: "field" do |bb|
         bb.use :input, wrap_with: {tag: "p", class: "control radio-checkbox"}
         bb.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-        bb.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+        bb.use :hint, wrap_with: {tag: "p", class: "help is-info"}
       end
     end
   end
@@ -176,7 +176,7 @@ SimpleForm.setup do |config|
 
     b.use :input, class: "input", wrap_with: {tag: "p", class: "control"}
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.wrappers :textarea, tag: "div", class: "field" do |b|
@@ -186,7 +186,7 @@ SimpleForm.setup do |config|
     b.use :label, class: "label"
     b.use :input, wrap_with: {tag: "p", class: "control"}, class: "textarea"
     b.use :error, wrap_with: {tag: "p", class: "help is-danger"}
-    b.use :hint,  wrap_with: {tag: "p", class: "help is-info"}
+    b.use :hint, wrap_with: {tag: "p", class: "help is-info"}
   end
 
   config.default_wrapper = :vertical_form
