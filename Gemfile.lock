@@ -106,7 +106,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    font-awesome-sass (5.13.0)
+    font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     foreman (0.87.2)
     globalid (0.4.2)
