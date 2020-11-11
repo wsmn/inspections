@@ -63,7 +63,7 @@ GEM
       ffi-compiler (>= 0.1)
     ast (2.4.0)
     bcrypt (3.1.15)
-    bootsnap (1.5.0)
+    bootsnap (1.5.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     bullet (6.1.0)
