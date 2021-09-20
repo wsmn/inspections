@@ -135,7 +135,7 @@ GEM
       ast (~> 2.4.0)
     pg (1.2.3)
     public_suffix (4.0.6)
-    puma (5.4.0)
+    puma (5.5.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -269,7 +269,7 @@ DEPENDENCIES
   foreman
   mini_magick
   pg
-  puma (~> 5.4)
+  puma (~> 5.5)
   rails (~> 6.0)
   rspec-rails
   sass-rails
