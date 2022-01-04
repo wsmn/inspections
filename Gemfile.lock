@@ -233,7 +233,7 @@ GEM
       rubocop-performance (~> 1.5.1)
     standardrb (1.0.0)
       standard
-    textacular (5.5.0)
+    textacular (5.5.1)
       activerecord (>= 5.0, < 7.1)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -257,7 +257,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   ruby
